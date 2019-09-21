@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://humblebone.com/contact/index.html</loc>
+    
+    <lastmod>2019-09-21T13:37:02.036Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://humblebone.com/about/index.html</loc>
     
     <lastmod>2019-09-21T13:12:55.047Z</lastmod>
@@ -37,13 +44,6 @@
   </url>
   
   <url>
-    <loc>https://humblebone.com/contact/index.html</loc>
-    
-    <lastmod>2019-08-21T07:26:13.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://humblebone.com/categories/index.html</loc>
     
     <lastmod>2019-08-21T07:26:13.000Z</lastmod>
@@ -51,14 +51,14 @@
   </url>
   
   <url>
-    <loc>https://humblebone.com/tags/index.html</loc>
+    <loc>https://humblebone.com/friends/index.html</loc>
     
     <lastmod>2019-08-21T07:26:13.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://humblebone.com/friends/index.html</loc>
+    <loc>https://humblebone.com/tags/index.html</loc>
     
     <lastmod>2019-08-21T07:26:13.000Z</lastmod>
     
