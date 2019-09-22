@@ -298,43 +298,11 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
             </div>
             <div class="tag-chips">
                 
-                
-                <a href="/tags/随笔/" title="随笔: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="随笔" style="background-color: #F9EBEA;">随笔
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
             </div>
         </div>
     </div>
 </div>
 
-    
-    <link rel="stylesheet" type="text/css" href="/libs/jqcloud/jqcloud.css">
-<style type="text/css">
-    #tag-wordcloud {
-        width: 100%;
-        height: 300px;
-    }
-</style>
-
-<div class="container" data-aos="fade-up">
-    <div class="card">
-        <div id="tag-wordcloud" class="card-content"></div>
-    </div>
-</div>
-
-<script type="text/javascript" src="/libs/jqcloud/jqcloud-1.0.4.min.js"></script>
-<script type="text/javascript">
-    
-
-    $('#tag-wordcloud').jQCloud([{"text":"随笔","weight":1,"link":"/tags/随笔/"}], {
-        autoResize: true
-    });
-</script>
     
 
 </main>
@@ -342,11 +310,11 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
 <footer class="page-footer bg-color">
     <div class="container row center-align">
         <div class="col s12 m8 l8 copy-right">
-            &copy; 2019 DongQi. All Rights Reserved.
+            &copy; 2019 HumbleBone. All Rights Reserved.
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">1.5k</span>
+            <span class="white-color">365</span>
             
 
             <br>
@@ -408,6 +376,8 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
     });
 </script>
 
+
+
 <script language=javascript>
     function siteTime() {
         window.setTimeout("siteTime()", 1000);
@@ -431,7 +401,7 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
         minutes - 0-59之间的整数，做为date对象的分钟数
         seconds - 0-59之间的整数，做为date对象的秒数
         microseconds - 0-999之间的整数，做为date对象的毫秒数 */
-        var t1 = Date.UTC(2017, 09, 11, 00, 00, 00); //北京时间2018-2-13 00:00:00
+        var t1 = Date.UTC(2018, 08, 22, 00, 00, 00); //北京时间2018-9-22 00:00:00
         var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
         var diff = t2 - t1;
         var diffYears = Math.floor(diff / years);
@@ -443,6 +413,7 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
     }/*因为建站时间还没有一年，就将之注释掉了。需要的可以取消*/
     siteTime();
 </script>
+
 
 <!-- 搜索遮罩框 -->
 <div id="searchModal" class="modal">
