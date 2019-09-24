@@ -328,7 +328,7 @@
 </div>
 <script>
 // 每天切换 banner 图.  Switch banner image every day.
-$('.bg-cover').css('background-image', 'url(/medias/banner/' + 6 + '.png)');
+$('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay() + '.png)');
 </script>
 
             <div class="cover-btns">
