@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://humblebone.com/"/>
-  <updated>2019-09-22T07:31:17.269Z</updated>
+  <updated>2019-09-24T06:54:15.225Z</updated>
   <id>https://humblebone.com/</id>
   
   <author>
@@ -17,112 +17,18 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>test three</title>
-    <link href="https://humblebone.com/2019/09/22/test3/"/>
-    <id>https://humblebone.com/2019/09/22/test3/</id>
-    <published>2019-09-22T07:28:30.170Z</published>
-    <updated>2019-09-22T07:31:17.269Z</updated>
+    <title>Hexo 搭建自己的个性博客</title>
+    <link href="https://humblebone.com/2019/09/24/hexo-da-jian-zi-ji-de-ge-xing-bo-ke/"/>
+    <id>https://humblebone.com/2019/09/24/hexo-da-jian-zi-ji-de-ge-xing-bo-ke/</id>
+    <published>2019-09-24T06:49:29.000Z</published>
+    <updated>2019-09-24T06:54:15.225Z</updated>
     
     <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a
-        
-      
     
     </summary>
     
     
-  </entry>
-  
-  <entry>
-    <title>test four</title>
-    <link href="https://humblebone.com/2019/09/22/test4/"/>
-    <id>https://humblebone.com/2019/09/22/test4/</id>
-    <published>2019-09-22T07:28:29.896Z</published>
-    <updated>2019-09-22T07:31:24.620Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a
-        
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>test one</title>
-    <link href="https://humblebone.com/2019/09/22/test1/"/>
-    <id>https://humblebone.com/2019/09/22/test1/</id>
-    <published>2019-09-22T07:28:28.299Z</published>
-    <updated>2019-09-22T07:30:53.818Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a
-        
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>test two</title>
-    <link href="https://humblebone.com/2019/09/22/test2/"/>
-    <id>https://humblebone.com/2019/09/22/test2/</id>
-    <published>2019-09-22T07:28:27.824Z</published>
-    <updated>2019-09-22T07:31:09.219Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a
-        
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="https://humblebone.com/2019/09/21/hello-world/"/>
-    <id>https://humblebone.com/2019/09/21/hello-world/</id>
-    <published>2019-09-21T06:46:47.717Z</published>
-    <updated>2019-09-21T06:46:47.717Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a
-        
-      
-    
-    </summary>
-    
+      <category term="Hexo" scheme="https://humblebone.com/tags/Hexo/"/>
     
   </entry>
   

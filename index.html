@@ -328,7 +328,7 @@
 </div>
 <script>
 // 每天切换 banner 图.  Switch banner image every day.
-$('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay() + '.jpg)');
+$('.bg-cover').css('background-image', 'url(/medias/banner/' + 6 + '.png)');
 </script>
 
             <div class="cover-btns">
@@ -381,37 +381,16 @@ $(function () {
     coverSlider.carousel({
         duration: Number('120'),
         fullWidth: true,
-        indicators: 'true' === 'true'
+        indicators: 'false' === 'true'
     });
 
     let carouselIntervalId;
     
-    // Loop to call the next cover article picture.
-    let autoCarousel = function() {
-        carouselIntervalId = setInterval(function () {
-            coverSlider.carousel('next');
-        }, 5000);
-    };
-    autoCarousel();
-    
 
     let restartPlay = function () {
         
-        clearInterval(carouselIntervalId);
-        autoCarousel();
-        
     };
 
-    
-    // prev and next cover post.
-    $('#prev-cover').click(function () {
-        coverSlider.carousel('prev');
-        restartPlay();
-    });
-    $('#next-cover').click(function () {
-        coverSlider.carousel('next');
-        restartPlay();
-    });
     
 });
 </script>
@@ -495,25 +474,25 @@ $(function () {
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2019/09/22/test3/" target="_blank">
+                    <a href="/2019/09/24/hexo-da-jian-zi-ji-de-ge-xing-bo-ke/" target="_blank">
                         <div class="card-image">
                             
                             
-                            <img src="/medias/featureimages/24.png" class="responsive-img" alt="test three">
+                            <img src="/medias/featureimages/8.png" class="responsive-img" alt="Hexo 搭建自己的个性博客">
                             
-                            <span class="card-title">test three</span>
+                            <span class="card-title">Hexo 搭建自己的个性博客</span>
                         </div>
                     </a>
 
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                            Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hex
+                            
                             
                         </div>
                         <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-09-22
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-09-24
                             </span>
                             <span class="publish-author">
                                 
@@ -522,133 +501,13 @@ $(function () {
                     </div>
 
                     
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2019/09/22/test4/" target="_blank">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/24.png" class="responsive-img" alt="test four">
-                            
-                            <span class="card-title">test four</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                            Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hex
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-09-22
-                            </span>
-                            <span class="publish-author">
-                                
-                            </span>
-                        </div>
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/Hexo/" target="_blank">
+                            <span class="chip bg-color">Hexo</span>
+                        </a>
+                        
                     </div>
-
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2019/09/22/test1/" target="_blank">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/14.png" class="responsive-img" alt="test one">
-                            
-                            <span class="card-title">test one</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                            Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hex
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-09-22
-                            </span>
-                            <span class="publish-author">
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2019/09/22/test2/" target="_blank">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/30.png" class="responsive-img" alt="test two">
-                            
-                            <span class="card-title">test two</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                            Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hex
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-09-22
-                            </span>
-                            <span class="publish-author">
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2019/09/21/hello-world/" target="_blank">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/27.png" class="responsive-img" alt="Hello World">
-                            
-                            <span class="card-title">Hello World</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                            Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hex
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-09-21
-                            </span>
-                            <span class="publish-author">
-                                
-                            </span>
-                        </div>
-                    </div>
-
                     
                 </div>
             </div>
@@ -666,7 +525,7 @@ $(function () {
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">365</span>
+            <span class="white-color">0</span>
             
 
             <br>

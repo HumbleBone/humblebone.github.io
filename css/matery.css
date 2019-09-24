@@ -446,6 +446,7 @@ header .go-back i {
     }
 }
 
+/* 关闭背景渐变功能 董琦 修改 2019.9.24*/
 @keyframes rainbow {
     0%,
     100% {

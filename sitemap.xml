@@ -2,37 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://humblebone.com/2019/09/24/hexo-da-jian-zi-ji-de-ge-xing-bo-ke/</loc>
+    
+    <lastmod>2019-09-24T06:54:15.225Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://humblebone.com/contact/index.html</loc>
     
     <lastmod>2019-09-22T07:55:03.351Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://humblebone.com/2019/09/22/test4/</loc>
-    
-    <lastmod>2019-09-22T07:31:24.620Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://humblebone.com/2019/09/22/test3/</loc>
-    
-    <lastmod>2019-09-22T07:31:17.269Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://humblebone.com/2019/09/22/test2/</loc>
-    
-    <lastmod>2019-09-22T07:31:09.219Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://humblebone.com/2019/09/22/test1/</loc>
-    
-    <lastmod>2019-09-22T07:30:53.818Z</lastmod>
     
   </url>
   
@@ -44,21 +23,7 @@
   </url>
   
   <url>
-    <loc>https://humblebone.com/2019/09/21/hello-world/</loc>
-    
-    <lastmod>2019-09-21T06:46:47.717Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://humblebone.com/404.html</loc>
-    
-    <lastmod>2019-08-21T07:26:13.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://humblebone.com/tags/index.html</loc>
     
     <lastmod>2019-08-21T07:26:13.000Z</lastmod>
     
@@ -72,14 +37,21 @@
   </url>
   
   <url>
-    <loc>https://humblebone.com/friends/index.html</loc>
+    <loc>https://humblebone.com/archives/index.html</loc>
     
     <lastmod>2019-08-21T07:26:13.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://humblebone.com/archives/index.html</loc>
+    <loc>https://humblebone.com/tags/index.html</loc>
+    
+    <lastmod>2019-08-21T07:26:13.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://humblebone.com/friends/index.html</loc>
     
     <lastmod>2019-08-21T07:26:13.000Z</lastmod>
     
