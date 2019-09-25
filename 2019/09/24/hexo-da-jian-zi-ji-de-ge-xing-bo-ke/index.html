@@ -12,14 +12,8 @@
 本篇教程主要记录使用 hexo-theme-matery 主题博客
 
 删除线
-Hexo 常用指令
-新建一篇文章
-
-$ hexo new post &amp;lt;title&amp;gt;
-查看 hexo 版本
-
-$ hexo version
-生成静态">
+Hexo 常用指令$ hexo new post &amp;lt;title&gt;   # 新建一篇文章
+$ hexo g                  # 生成静态">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -431,14 +425,14 @@ $ hexo version
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    856
+                    992
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    3 分
+                    4 分
                 </div>
                 
                 
@@ -459,55 +453,48 @@ $ hexo version
 <p>本篇教程主要记录使用 <code>hexo-theme-matery</code> 主题博客</p>
 </blockquote>
 <p><del>删除线</del></p>
-<h2 id="Hexo-常用指令"><a href="#Hexo-常用指令" class="headerlink" title="Hexo 常用指令"></a>Hexo 常用指令</h2><ul>
-<li>新建一篇文章</li>
-</ul>
-<pre><code>$ hexo new post &lt;title&gt;</code></pre><ul>
-<li>查看 <code>hexo</code> 版本</li>
-</ul>
-<pre><code>$ hexo version</code></pre><ul>
-<li>生成静态文件</li>
-</ul>
-<pre><code>$ hexo g</code></pre><ul>
-<li>本地服务器查看 (访问网址为： <code>http://localhost:4000/</code>)</li>
-</ul>
-<pre><code>$ hexo s</code></pre><ul>
-<li>部署到网站</li>
-</ul>
-<pre><code>$ hexo d</code></pre><h2 id="Markdown-基本语法"><a href="#Markdown-基本语法" class="headerlink" title="Markdown 基本语法"></a>Markdown 基本语法</h2><blockquote>
+<h2 id="Hexo-常用指令"><a href="#Hexo-常用指令" class="headerlink" title="Hexo 常用指令"></a>Hexo 常用指令</h2><pre class="line-numbers language-bash"><code class="language-bash">$ hexo new post <span class="token operator">&lt;</span>title<span class="token operator">></span>   <span class="token comment" spellcheck="true"># 新建一篇文章</span>
+$ hexo g                  <span class="token comment" spellcheck="true"># 生成静态文件</span>
+$ hexo s                  <span class="token comment" spellcheck="true"># 本地预览查看(http://localhost:4000/)</span>
+$ hexo d                  <span class="token comment" spellcheck="true"># 部署到网站</span>
+$ hexo version            <span class="token comment" spellcheck="true"># 查看hexo版本</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="Markdown-基本语法"><a href="#Markdown-基本语法" class="headerlink" title="Markdown 基本语法"></a>Markdown 基本语法</h2><blockquote>
 <p>1、文字</p>
-<pre><code>** 加粗 **
-* 倾斜 *
-*** 倾斜加粗 ***
-~~ 加删除线 ~~</code></pre><p>效果如下：</p>
+<pre class="line-numbers language-markdown"><code class="language-markdown"><span class="token bold"><span class="token punctuation">**</span> 加粗 <span class="token punctuation">**</span></span>
+<span class="token list punctuation">*</span> 倾斜 *
+<span class="token bold"><span class="token punctuation">**</span>* 倾斜加粗 <span class="token punctuation">**</span></span>*
+~~ 加删除线 ~~<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>效果如下：</p>
 <p><strong>加粗</strong></p>
 <p><em>倾斜</em></p>
 <p><strong><em>倾斜加粗</em></strong></p>
 <p><del>删除线</del></p>
 <p>2、图片、超链接</p>
-<pre><code>![图片名称](图片地址)
+<pre class="line-numbers language-markdown"><code class="language-markdown"><span class="token url">![图片名称](图片地址)</span>
 
-[超链接名字](超链接地址)</code></pre><p>3、列表</p>
-<pre><code>- 列表内容
-+ 列表内容
-* 列表内容</code></pre><ul>
+<span class="token url">[超链接名字](超链接地址)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>3、列表</p>
+<pre class="line-numbers language-markdown"><code class="language-markdown"><span class="token list punctuation">-</span> 列表内容
+<span class="token list punctuation">+</span> 列表内容
+<span class="token list punctuation">*</span> 列表内容<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<ul>
 <li>列表内容</li>
 </ul>
 <p>4、引用</p>
-<pre><code>&gt; 引用内容
-&gt;&gt; 引用内容
-&gt;&gt;&gt; 引用内容</code></pre><blockquote>
+<pre class="line-numbers language-markdown"><code class="language-markdown"><span class="token blockquote punctuation">></span> 引用内容
+<span class="token blockquote punctuation">>></span> 引用内容
+<span class="token blockquote punctuation">>>></span> 引用内容<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<blockquote>
 <p>引用内容</p>
 <blockquote>
 <p>引用内容</p>
 </blockquote>
 </blockquote>
 <p>5、代码高亮</p>
-<pre><code>​```[language] [title] [url] [link-text]
-
+<pre class="line-numbers language-markdown"><code class="language-markdown">​```<span class="token url">[language] [<span class="token variable">title</span>]</span> <span class="token url">[url] [<span class="token variable">link-text</span>]</span>
 代码
-
-​```</code></pre><ul>
+​```<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<ul>
 <li>[language] 是代码语言的名称，用来设置代码块颜色高亮，非必须；</li>
 <li>[title] 是顶部左边的说明，非必须；</li>
 <li>[url] 是顶部右边的超链接地址，非必须；</li>
@@ -521,11 +508,27 @@ type<span class="token punctuation">:</span> <span class="token string">"friends
 layout<span class="token punctuation">:</span> <span class="token string">"friends"</span>
 <span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>6、数学公式</p>
-<pre><code>$ S=\pi r^2 $  \\行内
+<pre class="line-numbers language-markdown"><code class="language-markdown">$ S=\pi r^2 $  \\行内
 
-$$ S=\pi r^2 $$  \\行间</code></pre><p>示例如下：</p>
+$$ S=\pi r^2 $$  \\行间<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>示例如下：</p>
 <p>$ S=\pi r^2 $</p>
 <p>$$ S=\pi r^2 $$ </p>
+<p>7、插入表情</p>
+<p>在 Hexo 中默认的 markdown 渲染器是 <code>hexo-renderer-marked</code> ，这个渲染器是不支持 emoji 表情的。我们可以使用 <a href="https://github.com/crimx/hexo-filter-github-emojis" target="_blank" rel="noopener">hexo-filter-github-emojis</a> 插件加载表情</p>
+<p><strong>安装</strong></p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 文件位置~/blog/</span>
+$ <span class="token function">npm</span> <span class="token function">install</span> hexo-filter-github-emojis --save<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p><strong>配置</strong></p>
+<pre class="line-numbers language-bash"><code class="language-bash">githubEmojis:
+ enable: <span class="token boolean">true</span>
+ className: github-emoji
+ unicode: <span class="token boolean">false</span>
+ styles:
+ localEmojis:<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong>使用</strong></p>
+<p>在 <a href="https://www.webpagefx.com/tools/emoji-cheat-sheet/" target="_blank" rel="noopener">Emoji Cheat Sheet</a> 中找到你想要的表情，然后点击即可复制。</p>
+<p>😄🤖🏀🏍️🛍️</p>
 </blockquote>
 <h2 id="Front-mateer介绍"><a href="#Front-mateer介绍" class="headerlink" title="Front-mateer介绍"></a>Front-mateer介绍</h2><table>
 <thead>
@@ -602,14 +605,32 @@ $$ S=\pi r^2 $$  \\行间</code></pre><p>示例如下：</p>
 </tr>
 </tbody></table>
 <h2 id="加速Hexo博客"><a href="#加速Hexo博客" class="headerlink" title="加速Hexo博客"></a>加速Hexo博客</h2><h3 id="InstantClick"><a href="#InstantClick" class="headerlink" title="InstantClick"></a>InstantClick</h3><p>先下载我修改后的 <a href="https://raw.githubusercontent.com/reuixiy/hugo-theme-meme/master/assets/js/instantclick.js" target="_blank" rel="noopener">instantclick.js</a>（浏览器右键保存为），再放到 <code>~/Blog/themes/matery/source/js/</code> 下，然后添加代码：</p>
-<pre class="line-numbers language-diff"><code class="language-diff"><span class="token deleted">&lt;!-- 文件位置：~/Blog/themes/matery/layout/layout.ejs --></span>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token operator">&lt;</span>!<span class="token operator">-</span><span class="token operator">-</span> 文件位置：<span class="token operator">~</span><span class="token operator">/</span>Blog<span class="token operator">/</span>themes<span class="token operator">/</span>matery<span class="token operator">/</span>layout<span class="token operator">/</span>layout<span class="token punctuation">.</span>ejs <span class="token operator">-</span><span class="token operator">-</span><span class="token operator">></span>
 
-<span class="token inserted">+ &lt;script type="text/javascript" src="/js/src/instantclick.js" data-no-instant>&lt;/script></span>
-<span class="token inserted">+ &lt;script data-no-instant>InstantClick.init();&lt;/script></span>
+<span class="token operator">+</span> <span class="token operator">&lt;</span>script type<span class="token operator">=</span><span class="token string">"text/javascript"</span> src<span class="token operator">=</span><span class="token string">"/js/instantclick.js"</span> data<span class="token operator">-</span>no<span class="token operator">-</span>instant<span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span>
+<span class="token operator">+</span> <span class="token operator">&lt;</span>script data<span class="token operator">-</span>no<span class="token operator">-</span>instant<span class="token operator">></span>InstantClick<span class="token punctuation">.</span>init<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span>
 
-<span class="token deleted">&lt;/body></span>
-<span class="token deleted">&lt;/html></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
+<span class="token operator">&lt;</span><span class="token operator">/</span>body<span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>html<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
             </div>
             <hr />
 
@@ -690,14 +711,8 @@ $$ S=\pi r^2 $$  \\行间</code></pre><p>示例如下：</p>
 本篇教程主要记录使用 hexo-theme-matery 主题博客
 
 删除线
-Hexo 常用指令
-新建一篇文章
-
-$ hexo new post &lt;title&gt;
-查看 hexo 版本
-
-$ hexo version
-生成静态
+Hexo 常用指令$ hexo new post &lt;title>   # 新建一篇文章
+$ hexo g                  # 生成静态
                         
                     </div>
                     <div class="publish-info">
@@ -745,14 +760,8 @@ $ hexo version
 本篇教程主要记录使用 hexo-theme-matery 主题博客
 
 删除线
-Hexo 常用指令
-新建一篇文章
-
-$ hexo new post &lt;title&gt;
-查看 hexo 版本
-
-$ hexo version
-生成静态
+Hexo 常用指令$ hexo new post &lt;title>   # 新建一篇文章
+$ hexo g                  # 生成静态
                         
                     </div>
                     <div class="publish-info">
@@ -894,7 +903,7 @@ $ hexo version
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">856</span>
+            <span class="white-color">992</span>
             
 
             <br>
