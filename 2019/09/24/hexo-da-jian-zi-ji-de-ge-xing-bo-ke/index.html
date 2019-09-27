@@ -9,11 +9,10 @@
     <meta name="google-site-verification" content="Xx-vr0QBastl5kh2jEC1TEUUzIg9vjWx387Pl62wQHQ">
     <meta name="description" content="
 
-本篇教程主要记录使用 hexo-theme-matery 主题博客
+本篇教程主要记录使用 hexo-theme-matery 主题中遇到的一些问题，以及如何对该主题的博客进行个性化定制，优化功能。
 
 Hexo 常用指令$ hexo new post &amp;lt;title&gt;   # 新建一篇文章
-$ hexo g                  # 生成静态文件
-$">
+$ hex">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -425,14 +424,14 @@ $">
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.1k
+                    2k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    4 分
+                    7 分
                 </div>
                 
                 
@@ -450,7 +449,7 @@ $">
             <div id="articleContent">
                 <hr>
 <blockquote>
-<p>本篇教程主要记录使用 <code>hexo-theme-matery</code> 主题博客</p>
+<p>本篇教程主要记录使用 <code>hexo-theme-matery</code> 主题中遇到的一些问题，以及如何对该主题的博客进行个性化定制，优化功能。</p>
 </blockquote>
 <h2 id="Hexo-常用指令"><a href="#Hexo-常用指令" class="headerlink" title="Hexo 常用指令"></a>Hexo 常用指令</h2><pre class="line-numbers language-bash"><code class="language-bash">$ hexo new post <span class="token operator">&lt;</span>title<span class="token operator">></span>   <span class="token comment" spellcheck="true"># 新建一篇文章</span>
 $ hexo g                  <span class="token comment" spellcheck="true"># 生成静态文件</span>
@@ -618,18 +617,75 @@ $ <span class="token function">npm</span> <span class="token function">install</
 <blockquote>
 <p>🌟 <strong>注意</strong>:</p>
 <ol>
-<li>如果 <code>img</code> 属性不填写的话，文章特色图会根据文章标题的 <code>hashcode</code> 的值取余，然后选取主题中对应的特色图片，从而达到让所有文章都的特色图<strong>各有特色</strong>。</li>
+<li>如果 <code>img</code> 属性不填写的话，文章特色图会根据文章标题的 <code>hashcode</code> 的值取余，然后选取主题中对应的特色图片，从而达到让所有文章的特色图<strong>各有特色</strong>。</li>
 <li><code>date</code> 的值尽量保证每篇文章是唯一的，因为本主题中 <code>Gitalk</code> 和 <code>Gitment</code> 识别 <code>id</code> 是通过 <code>date</code> 的值来作为唯一标识的。</li>
 </ol>
 </blockquote>
-<h2 id="加速Hexo博客"><a href="#加速Hexo博客" class="headerlink" title="加速Hexo博客"></a>加速Hexo博客</h2><h3 id="InstantClick"><a href="#InstantClick" class="headerlink" title="InstantClick"></a>InstantClick</h3><p>先下载我修改后的 <a href="https://raw.githubusercontent.com/reuixiy/hugo-theme-meme/master/assets/js/instantclick.js" target="_blank" rel="noopener">instantclick.js</a>（浏览器右键保存为），再放到 <code>~/Blog/themes/matery/source/js/</code> 下，然后添加代码：</p>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token operator">&lt;</span>!<span class="token operator">-</span><span class="token operator">-</span> 文件位置：<span class="token operator">~</span><span class="token operator">/</span>Blog<span class="token operator">/</span>themes<span class="token operator">/</span>matery<span class="token operator">/</span>layout<span class="token operator">/</span>layout<span class="token punctuation">.</span>ejs <span class="token operator">-</span><span class="token operator">-</span><span class="token operator">></span>
+<h2 id="加速Hexo博客"><a href="#加速Hexo博客" class="headerlink" title="加速Hexo博客"></a>加速Hexo博客</h2><p>由于原来主题中的许多功能都是动画效果，且主页面中的图片比较多，还有音频和视频的插入，所以为了加速博客的浏览速度，我关闭了许多不需要的功能</p>
+<p>1、关闭首页文章滚动功能，后续如果想要将推荐的文章放在首页推荐，可以再加上</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token operator">~</span> 文件位置 themes<span class="token operator">/</span>matery<span class="token operator">/</span>_config<span class="token punctuation">.</span>yml <span class="token operator">~</span>
 
-<span class="token operator">+</span> <span class="token operator">&lt;</span>script type<span class="token operator">=</span><span class="token string">"text/javascript"</span> src<span class="token operator">=</span><span class="token string">"/js/instantclick.js"</span> data<span class="token operator">-</span>no<span class="token operator">-</span>instant<span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span>
-<span class="token operator">+</span> <span class="token operator">&lt;</span>script data<span class="token operator">-</span>no<span class="token operator">-</span>instant<span class="token operator">></span>InstantClick<span class="token punctuation">.</span>init<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span>
+<span class="token comment" spellcheck="true"># 首页封面轮播图的相关配置.</span>
+cover<span class="token punctuation">:</span>
+  showPrevNext<span class="token punctuation">:</span> false <span class="token comment" spellcheck="true"># 是否显示左右切换按钮. </span>
+  showIndicators<span class="token punctuation">:</span> false <span class="token comment" spellcheck="true"># 是否显示指示器. </span>
+  autoLoop<span class="token punctuation">:</span> false <span class="token comment" spellcheck="true"># 是否自动轮播.</span>
+  duration<span class="token punctuation">:</span> <span class="token number">120</span> <span class="token comment" spellcheck="true"># 切换延迟时间. </span>
+  intervalTime<span class="token punctuation">:</span> <span class="token number">5000</span> <span class="token comment" spellcheck="true"># 自动切换下一张的间隔时间.</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>2、关闭鼠标点击出现爱心💗</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 是否激活点击页面的'爱心'效果，默认激活.</span>
+clicklove<span class="token punctuation">:</span>
+  enable<span class="token punctuation">:</span> false<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>3、关闭首页显示音乐播放功能（后续可以尝试将其修改到关于about界面）</p>
+<pre class="line-numbers language-python"><code class="language-python">music<span class="token punctuation">:</span>
+  enable<span class="token punctuation">:</span> false
+  showTitle<span class="token punctuation">:</span> false
+  title<span class="token punctuation">:</span> 听听音乐
+  fixed<span class="token punctuation">:</span> false <span class="token comment" spellcheck="true"># 开启吸底模式</span>
+  autoplay<span class="token punctuation">:</span> false <span class="token comment" spellcheck="true"># 是否自动播放</span>
+  theme<span class="token punctuation">:</span> <span class="token string">'#542674'</span>
+  loop<span class="token punctuation">:</span> <span class="token string">'all'</span> <span class="token comment" spellcheck="true"># 音频循环播放, 可选值: 'all', 'one', 'none'</span>
+  order<span class="token punctuation">:</span> <span class="token string">'list'</span> <span class="token comment" spellcheck="true"># 音频循环顺序, 可选值: 'list', 'random'</span>
+  preload<span class="token punctuation">:</span> <span class="token string">'auto'</span> <span class="token comment" spellcheck="true"># 预加载，可选值: 'none', 'metadata', 'auto'</span>
+  volume<span class="token punctuation">:</span> <span class="token number">0.7</span> <span class="token comment" spellcheck="true"># 默认音量，请注意播放器会记忆用户设置，用户手动设置音量后默认音量即失效</span>
+  listFolded<span class="token punctuation">:</span> false <span class="token comment" spellcheck="true"># 列表默认折叠</span>
+  listMaxHeight<span class="token punctuation">:</span> <span class="token comment" spellcheck="true">#列表最大高度</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>4、修改首页banner和每篇文章封面的featureeimages图片的尺寸大小</p>
+<p>matery主题的封面图片是根据周一到周日不同天数，来选取不同的图片。其使用的函数为：</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token operator">//</span> 每天切换 banner 图<span class="token punctuation">.</span>  Switch banner image every day<span class="token punctuation">.</span>
+<span class="token operator">&lt;</span>script<span class="token operator">></span>
+$<span class="token punctuation">(</span><span class="token string">'.bg-cover'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>css<span class="token punctuation">(</span><span class="token string">'background-image'</span><span class="token punctuation">,</span> <span class="token string">'url(/medias/banner/'</span> 
+                   <span class="token operator">+</span> new Date<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>getDay<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">'.png)'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>而每篇文章的封面图片如果没有指定的话，是采用哈希值取不同的特色图片，实现的函数如下：</p>
+<pre class="line-numbers language-python"><code class="language-python">var featureimg <span class="token operator">=</span> <span class="token string">'/medias/bg.jpg'</span><span class="token punctuation">;</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span>page<span class="token punctuation">.</span>img<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    featureimg <span class="token operator">=</span> page<span class="token punctuation">.</span>img<span class="token punctuation">;</span>
+<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+    var hashCode <span class="token operator">=</span> function <span class="token punctuation">(</span>str<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>!str <span class="token operator">&amp;</span><span class="token operator">&amp;</span> str<span class="token punctuation">.</span>length <span class="token operator">==</span><span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
 
-<span class="token operator">&lt;</span><span class="token operator">/</span>body<span class="token operator">></span>
-<span class="token operator">&lt;</span><span class="token operator">/</span>html<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+        var hash <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span>var i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> len <span class="token operator">=</span> str<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i <span class="token operator">&lt;</span> len<span class="token punctuation">;</span> i<span class="token operator">+</span><span class="token operator">+</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            hash <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>hash <span class="token operator">&lt;&lt;</span> <span class="token number">5</span><span class="token punctuation">)</span> <span class="token operator">-</span> hash<span class="token punctuation">)</span> <span class="token operator">+</span> str<span class="token punctuation">.</span>charCodeAt<span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            hash <span class="token operator">|</span><span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> hash<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+    var len <span class="token operator">=</span> theme<span class="token punctuation">.</span>featureImages<span class="token punctuation">.</span>length<span class="token punctuation">;</span>
+    var num <span class="token operator">=</span> Math<span class="token punctuation">.</span>abs<span class="token punctuation">(</span>hashCode<span class="token punctuation">(</span>page<span class="token punctuation">.</span>title<span class="token punctuation">)</span> <span class="token operator">%</span> len<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    featureimg <span class="token operator">=</span> theme<span class="token punctuation">.</span>featureImages<span class="token punctuation">[</span>num<span class="token punctuation">]</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>考虑到网页的加载速度⚡，现在使用的banner图片分辨率为<code>1280 x 720</code> ，featureimages使用的图片分辨率为 <code>320 x 240</code> 。</p>
+<h2 id="存在的Bug"><a href="#存在的Bug" class="headerlink" title="存在的Bug"></a>存在的Bug</h2><p>1、代码块中的代码一行不能输入太长，这样会导致行数有时候不会对齐，即代码会超出行数。</p>
+<p>2、由于文章的特色图片在首页封面中够用，但是单点开文章时，使用的banner还是该尺寸的featureimage，所以后续需要修改一下该动能。</p>
+<p>3、在站点测速网站上分析博客主要存在相应时间的问题，<a href="https://gtmetrix.com/" target="_blank" rel="noopener">Gtmetrix</a> 测速网站可以实现输入域名后，检测网站的整体加载速度，并给出相应的修改意见。</p>
+<p><img src="F:%5CBlog%5Csource_posts%5CHexo-%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E6%80%A7%E5%8D%9A%E5%AE%A2%5C1.png" alt=""></p>
+<p><img src="F:%5CBlog%5Csource_posts%5CHexo-%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E6%80%A7%E5%8D%9A%E5%AE%A2%5C3.png" alt=""></p>
+<p>可见目前网站主要还是网页图片加载的速度是首要问题🙃，其次每日诗词的加载和字体也会占据一大部分时间，后续也会想办法进行优化🐳🐳🐳。</p>
+<h2 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h2><p>关于该博客的主题使用的详细教程我主要参考了 <a href="https://blinkfox.github.io/2018/09/28/qian-duan/hexo-bo-ke-zhu-ti-zhi-hexo-theme-matery-de-jie-shao/" target="_blank" rel="noopener">Blinkfox</a> 的这篇安装教程，同时还参考了 <a href="https://godweiyang.com/2018/04/13/hexo-blog/" target="_blank" rel="noopener">godweiyang</a> 的一些个性化定制，感谢他们的帮助，让 <code>hexo-matery-theme</code>这个主题可以服务到更多的人。同时，也感谢 <a href="http://io-oi.me/" target="_blank" rel="noopener">reuixiy</a> 的博客，这个博主最近在hugo上开源了自己的主题，因为经常出一些关于博客客制化的前沿文章，所以对我起到了很大的帮助，大家可以去他们的博客玩一玩啊🍻🍻🍻</p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -726,11 +782,10 @@ $ <span class="token function">npm</span> <span class="token function">install</
                         
                             
 
-本篇教程主要记录使用 hexo-theme-matery 主题博客
+本篇教程主要记录使用 hexo-theme-matery 主题中遇到的一些问题，以及如何对该主题的博客进行个性化定制，优化功能。
 
 Hexo 常用指令$ hexo new post &lt;title>   # 新建一篇文章
-$ hexo g                  # 生成静态文件
-$
+$ hex
                         
                     </div>
                     <div class="publish-info">
@@ -775,11 +830,10 @@ $
                         
                             
 
-本篇教程主要记录使用 hexo-theme-matery 主题博客
+本篇教程主要记录使用 hexo-theme-matery 主题中遇到的一些问题，以及如何对该主题的博客进行个性化定制，优化功能。
 
 Hexo 常用指令$ hexo new post &lt;title>   # 新建一篇文章
-$ hexo g                  # 生成静态文件
-$
+$ hex
                         
                     </div>
                     <div class="publish-info">
@@ -921,7 +975,7 @@ $
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">1.1k</span>
+            <span class="white-color">2k</span>
             
 
             <br>

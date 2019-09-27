@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://humblebone.com/"/>
-  <updated>2019-09-25T09:13:50.668Z</updated>
+  <updated>2019-09-27T12:35:54.186Z</updated>
   <id>https://humblebone.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://humblebone.com/2019/09/24/hexo-da-jian-zi-ji-de-ge-xing-bo-ke/"/>
     <id>https://humblebone.com/2019/09/24/hexo-da-jian-zi-ji-de-ge-xing-bo-ke/</id>
     <published>2019-09-24T06:49:29.000Z</published>
-    <updated>2019-09-25T09:13:50.668Z</updated>
+    <updated>2019-09-27T12:35:54.186Z</updated>
     
     <summary type="html">
     
@@ -31,9 +31,9 @@
         
           &lt;hr&gt;
 &lt;blockquote&gt;
-&lt;p&gt;本篇教程主要记录使用 &lt;code&gt;hexo-theme-matery&lt;/code&gt; 主题博客&lt;/p&gt;
+&lt;p&gt;本篇教程主要记录使用 &lt;code&gt;hexo-theme-matery&lt;/code&gt; 主题中遇到的一些问题，以及如何对该主题的博客进行个性化定制，优化功能。&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h2 id=&quot;Hexo-常用指令&quot;&gt;&lt;a href=&quot;#Hexo-常用指令&quot;
+&lt;h2 id=&quot;Hexo-常用指令&quot;&gt;&lt;a
         
       
     
