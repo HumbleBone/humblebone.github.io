@@ -11,9 +11,9 @@
 
 本篇教程主要记录使用 hexo-theme-matery 主题博客
 
-删除线
 Hexo 常用指令$ hexo new post &amp;lt;title&gt;   # 新建一篇文章
-$ hexo g                  # 生成静态">
+$ hexo g                  # 生成静态文件
+$">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -425,7 +425,7 @@ $ hexo g                  # 生成静态">
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    992
+                    1.1k
                 </div>
                 
 
@@ -452,12 +452,23 @@ $ hexo g                  # 生成静态">
 <blockquote>
 <p>本篇教程主要记录使用 <code>hexo-theme-matery</code> 主题博客</p>
 </blockquote>
-<p><del>删除线</del></p>
 <h2 id="Hexo-常用指令"><a href="#Hexo-常用指令" class="headerlink" title="Hexo 常用指令"></a>Hexo 常用指令</h2><pre class="line-numbers language-bash"><code class="language-bash">$ hexo new post <span class="token operator">&lt;</span>title<span class="token operator">></span>   <span class="token comment" spellcheck="true"># 新建一篇文章</span>
 $ hexo g                  <span class="token comment" spellcheck="true"># 生成静态文件</span>
 $ hexo s                  <span class="token comment" spellcheck="true"># 本地预览查看(http://localhost:4000/)</span>
 $ hexo d                  <span class="token comment" spellcheck="true"># 部署到网站</span>
 $ hexo version            <span class="token comment" spellcheck="true"># 查看hexo版本</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="Hexo文件目录结构"><a href="#Hexo文件目录结构" class="headerlink" title="Hexo文件目录结构"></a>Hexo文件目录结构</h2><pre class="line-numbers language-none"><code class="language-none">|-- .deploy_git
+|-- _config.yml
+|-- package.json
+|-- node_modules
+|-- scaffolds
+|-- public
+|-- themes
+|-- source
+   |-- _posts<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<blockquote>
+<p>💥 Tips：关于每个文件详细的信息和作用可以查看这篇<a href="https://yuchen-lea.github.io/2016-01-18-hexo-dir-struct/" target="_blank" rel="noopener">指南</a></p>
+</blockquote>
 <h2 id="Markdown-基本语法"><a href="#Markdown-基本语法" class="headerlink" title="Markdown 基本语法"></a>Markdown 基本语法</h2><blockquote>
 <p>1、文字</p>
 <pre class="line-numbers language-markdown"><code class="language-markdown"><span class="token bold"><span class="token punctuation">**</span> 加粗 <span class="token punctuation">**</span></span>
@@ -604,6 +615,13 @@ $ <span class="token function">npm</span> <span class="token function">install</
 <td align="left">文章标签，一篇文章可以多个标签</td>
 </tr>
 </tbody></table>
+<blockquote>
+<p>🌟 <strong>注意</strong>:</p>
+<ol>
+<li>如果 <code>img</code> 属性不填写的话，文章特色图会根据文章标题的 <code>hashcode</code> 的值取余，然后选取主题中对应的特色图片，从而达到让所有文章都的特色图<strong>各有特色</strong>。</li>
+<li><code>date</code> 的值尽量保证每篇文章是唯一的，因为本主题中 <code>Gitalk</code> 和 <code>Gitment</code> 识别 <code>id</code> 是通过 <code>date</code> 的值来作为唯一标识的。</li>
+</ol>
+</blockquote>
 <h2 id="加速Hexo博客"><a href="#加速Hexo博客" class="headerlink" title="加速Hexo博客"></a>加速Hexo博客</h2><h3 id="InstantClick"><a href="#InstantClick" class="headerlink" title="InstantClick"></a>InstantClick</h3><p>先下载我修改后的 <a href="https://raw.githubusercontent.com/reuixiy/hugo-theme-meme/master/assets/js/instantclick.js" target="_blank" rel="noopener">instantclick.js</a>（浏览器右键保存为），再放到 <code>~/Blog/themes/matery/source/js/</code> 下，然后添加代码：</p>
 <pre class="line-numbers language-python"><code class="language-python"><span class="token operator">&lt;</span>!<span class="token operator">-</span><span class="token operator">-</span> 文件位置：<span class="token operator">~</span><span class="token operator">/</span>Blog<span class="token operator">/</span>themes<span class="token operator">/</span>matery<span class="token operator">/</span>layout<span class="token operator">/</span>layout<span class="token punctuation">.</span>ejs <span class="token operator">-</span><span class="token operator">-</span><span class="token operator">></span>
 
@@ -710,9 +728,9 @@ $ <span class="token function">npm</span> <span class="token function">install</
 
 本篇教程主要记录使用 hexo-theme-matery 主题博客
 
-删除线
 Hexo 常用指令$ hexo new post &lt;title>   # 新建一篇文章
-$ hexo g                  # 生成静态
+$ hexo g                  # 生成静态文件
+$
                         
                     </div>
                     <div class="publish-info">
@@ -759,9 +777,9 @@ $ hexo g                  # 生成静态
 
 本篇教程主要记录使用 hexo-theme-matery 主题博客
 
-删除线
 Hexo 常用指令$ hexo new post &lt;title>   # 新建一篇文章
-$ hexo g                  # 生成静态
+$ hexo g                  # 生成静态文件
+$
                         
                     </div>
                     <div class="publish-info">
@@ -903,7 +921,7 @@ $ hexo g                  # 生成静态
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">992</span>
+            <span class="white-color">1.1k</span>
             
 
             <br>
@@ -1042,17 +1060,6 @@ $(function () {
 <script src="/js/matery.js"></script>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
-
-<script async src="https://www.googletagmanager.com/gtag/js?id="></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() {
-        dataLayer.push(arguments);
-    }
-
-    gtag('js', new Date());
-    gtag('config', '');
-</script>
 
 
 

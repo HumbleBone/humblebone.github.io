@@ -294,7 +294,25 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
                     <div id="articleContent" data-aos="fade-up">
                         <p>从自己第一次开始写博客到现在也已经一年多了，一开始使用的是屠夫9441在 Hexo 上创作的 Maupassant 极简主题，到现在使用的是matery 主题。我会一直坚持下去，生命不息，创作不止！！！</p>
 <p>如果大家有任何问题，都可以在下面给我留言。</p>
-
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
                     </div>
                 </div>
             </div>
@@ -343,7 +361,7 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">992</span>
+            <span class="white-color">1.1k</span>
             
 
             <br>
@@ -482,17 +500,6 @@ $(function () {
 <script src="/js/matery.js"></script>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
-
-<script async src="https://www.googletagmanager.com/gtag/js?id="></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() {
-        dataLayer.push(arguments);
-    }
-
-    gtag('js', new Date());
-    gtag('config', '');
-</script>
 
 
 
