@@ -424,14 +424,14 @@ $ hex">
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2k
+                    2.2k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    7 分
+                    8 分
                 </div>
                 
                 
@@ -531,14 +531,29 @@ $$ S=\pi r^2 $$  \\行间<span aria-hidden="true" class="line-numbers-rows"><spa
 $ <span class="token function">npm</span> <span class="token function">install</span> hexo-filter-github-emojis --save<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p><strong>配置</strong></p>
 <pre class="line-numbers language-bash"><code class="language-bash">githubEmojis:
- enable: <span class="token boolean">true</span>
- className: github-emoji
- unicode: <span class="token boolean">false</span>
- styles:
- localEmojis:<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+enable: <span class="token boolean">true</span>
+className: github-emoji
+unicode: <span class="token boolean">false</span>
+styles:
+localEmojis:<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><strong>使用</strong></p>
 <p>在 <a href="https://www.webpagefx.com/tools/emoji-cheat-sheet/" target="_blank" rel="noopener">Emoji Cheat Sheet</a> 中找到你想要的表情，然后点击即可复制。</p>
 <p>😄🤖🏀🏍️🛍️</p>
+<p>8、插入图片</p>
+<p>首先确保在主站点配置文件中打开 <code>asset_folder</code> 功能：</p>
+<pre class="line-numbers language-yaml"><code class="language-yaml"><span class="token key atrule">post_asset_folder</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+
+// url放置你github仓库的位置
+<span class="token key atrule">url</span><span class="token punctuation">:</span> http<span class="token punctuation">:</span>//humblebone.github.io
+<span class="token key atrule">root</span><span class="token punctuation">:</span> /
+<span class="token key atrule">permalink</span><span class="token punctuation">:</span> <span class="token punctuation">:</span>year/<span class="token punctuation">:</span>month/<span class="token punctuation">:</span>day/<span class="token punctuation">:</span>title/
+permalink_defaults<span class="token punctuation">:</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>这样每次新建一篇文章时，都会生成同样命名的文件夹，将插入的图片放在该文件夹下，便可以引用了。</p>
+<p>由于我采用的是 <code>Typora</code> 编写的 <code>markdown</code> 文件，所以我习惯于使用 <code>![]()</code> 的方式导入图片。因此，我们可以下载 <code>hexo-asser-image</code> 这个插件🎯</p>
+<p>下载的时候需要注意，不要直接使用 <code>npm install hexo-asset-image --save</code> 命令行，这样下载到的不是最新的版本，使用如下的安装指令：</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> https://github.com/xcodebuild/hexo-asset-image --save<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>下载成功之后，我们便可以在编辑器中导入我们想要插入的图片😄，插入的方式如下：</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token operator">!</span><span class="token punctuation">[</span>title<span class="token punctuation">]</span><span class="token punctuation">(</span>新建文章的名称/xxx.png<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 </blockquote>
 <h2 id="Front-mateer介绍"><a href="#Front-mateer介绍" class="headerlink" title="Front-mateer介绍"></a>Front-mateer介绍</h2><table>
 <thead>
@@ -780,12 +795,7 @@ $<span class="token punctuation">(</span><span class="token string">'.bg-cover'<
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
-
-本篇教程主要记录使用 hexo-theme-matery 主题中遇到的一些问题，以及如何对该主题的博客进行个性化定制，优化功能。
-
-Hexo 常用指令$ hexo new post &lt;title>   # 新建一篇文章
-$ hex
+                            本篇教程主要记录使用 `hexo-theme-matery` 主题中遇到的一些问题，以及如何对该主题的博客进行个性化定制，优化功能。
                         
                     </div>
                     <div class="publish-info">
@@ -828,12 +838,7 @@ $ hex
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
-
-本篇教程主要记录使用 hexo-theme-matery 主题中遇到的一些问题，以及如何对该主题的博客进行个性化定制，优化功能。
-
-Hexo 常用指令$ hexo new post &lt;title>   # 新建一篇文章
-$ hex
+                            本篇教程主要记录使用 `hexo-theme-matery` 主题中遇到的一些问题，以及如何对该主题的博客进行个性化定制，优化功能。
                         
                     </div>
                     <div class="publish-info">
@@ -975,7 +980,7 @@ $ hex
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">2k</span>
+            <span class="white-color">2.2k</span>
             
 
             <br>
