@@ -6,6 +6,7 @@
     <meta charset="utf-8">
     <meta name="keywords" content="Hexo 搭建自己的个性博客, 董琦的博客">
     <meta name="baidu-site-verification" content="zvOmqBkbqD">
+	<meta name="baidu-site-verification" content="mFtyHGIFn1">
     <meta name="google-site-verification" content="Xx-vr0QBastl5kh2jEC1TEUUzIg9vjWx387Pl62wQHQ">
     <meta name="description" content="
 
@@ -424,14 +425,14 @@ $ hex">
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.2k
+                    2.6k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    8 分
+                    10 分
                 </div>
                 
                 
@@ -694,6 +695,27 @@ $<span class="token punctuation">(</span><span class="token string">'.bg-cover'<
     var num <span class="token operator">=</span> Math<span class="token punctuation">.</span>abs<span class="token punctuation">(</span>hashCode<span class="token punctuation">(</span>page<span class="token punctuation">.</span>title<span class="token punctuation">)</span> <span class="token operator">%</span> len<span class="token punctuation">)</span><span class="token punctuation">;</span>
     featureimg <span class="token operator">=</span> theme<span class="token punctuation">.</span>featureImages<span class="token punctuation">[</span>num<span class="token punctuation">]</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>考虑到网页的加载速度⚡，现在使用的banner图片分辨率为<code>1280 x 720</code> ，featureimages使用的图片分辨率为 <code>320 x 240</code> 。</p>
+<h2 id="SEO优化"><a href="#SEO优化" class="headerlink" title="SEO优化"></a>SEO优化</h2><p>一个网站的SEO对一个网站非常重要，<a href="https://link.zhihu.com/?target=https%3A//baike.baidu.com/item/SEO/102990%3Ffr%3Daladdin" target="_blank" rel="noopener">SEO</a>指的是搜索引擎优化。通过搜索引擎优化，可以提高网站的网站关键词排名以及博客文章的曝光度。一般来说，我们针对百度和Google这两个搜索引擎进行优化，提高对网站资源的索引量，使我们的文章更容易被发现。</p>
+<h4 id="站点地图"><a href="#站点地图" class="headerlink" title="站点地图"></a>站点地图</h4><p>站点地图即<a href="https://link.zhihu.com/?target=https%3A//baike.baidu.com/item/sitemap/6241567%3Ffr%3Daladdin" target="_blank" rel="noopener">sitemap</a>， 是一个页面，上面放置了网站上需要搜索引擎抓取的所有页面的链接。站点地图可以告诉搜索引擎网站上有哪些可供抓取的网页，以便搜索引擎可以更加智能地抓取网站。</p>
+<p><strong>生成站点地图</strong></p>
+<p>安装百度和Google的站点地图生成插件：</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> hexo-generator-baidu-sitemap --save
+<span class="token function">npm</span> <span class="token function">install</span> hexo-generator-sitemap --save<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p><strong>修改配置文件</strong></p>
+<p>修改站点配置文件_config.yml，添加以下内容：</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 自动生成sitemap</span>
+sitemap:
+  path: sitemap.xml
+baidusitemap:
+  path: baidusitemap.xml<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong>生成和部署</strong></p>
+<p>执行生成和部署命令：</p>
+<pre class="line-numbers language-text"><code class="language-text">hexo g
+hexo d<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>此时，进入public目录，你会发现里面有sitemap.xml和baidusitemap.xml两个文件，这就是生成的站点地图。里面包含了网站上所有页面的链接，搜索引擎通过这两个文件来抓取网站页面。</p>
+<blockquote>
+<p>sitemap.xml用来提交给Google<br>baidusitemap.xml用来提交给百度</p>
+</blockquote>
 <h2 id="存在的Bug"><a href="#存在的Bug" class="headerlink" title="存在的Bug"></a>存在的Bug</h2><p>1、代码块中的代码一行不能输入太长，这样会导致行数有时候不会对齐，即代码会超出行数。</p>
 <p>2、由于文章的特色图片在首页封面中够用，但是单点开文章时，使用的banner还是该尺寸的featureimage，所以后续需要修改一下该动能。</p>
 <p>3、在站点测速网站上分析博客主要存在相应时间的问题，<a href="https://gtmetrix.com/" target="_blank" rel="noopener">Gtmetrix</a> 测速网站可以实现输入域名后，检测网站的整体加载速度，并给出相应的修改意见。</p>
@@ -980,7 +1002,7 @@ $<span class="token punctuation">(</span><span class="token string">'.bg-cover'<
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">2.2k</span>
+            <span class="white-color">2.6k</span>
             
 
             <br>
