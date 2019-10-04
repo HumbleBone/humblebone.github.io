@@ -5,9 +5,9 @@
   <subtitle>HumbleBone</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://humblebone.github.io/"/>
-  <updated>2019-10-04T07:09:44.443Z</updated>
-  <id>http://humblebone.github.io/</id>
+  <link href="https://humblebone.com/"/>
+  <updated>2019-10-04T08:58:55.851Z</updated>
+  <id>https://humblebone.com/</id>
   
   <author>
     <name>董琦</name>
@@ -18,10 +18,10 @@
   
   <entry>
     <title>Hexo 搭建自己的个性博客</title>
-    <link href="http://humblebone.github.io/2019/09/24/hexo-da-jian-zi-ji-de-ge-xing-bo-ke/"/>
-    <id>http://humblebone.github.io/2019/09/24/hexo-da-jian-zi-ji-de-ge-xing-bo-ke/</id>
+    <link href="https://humblebone.com/2019/09/24/hexo-da-jian-zi-ji-de-ge-xing-bo-ke/"/>
+    <id>https://humblebone.com/2019/09/24/hexo-da-jian-zi-ji-de-ge-xing-bo-ke/</id>
     <published>2019-09-24T06:49:29.000Z</published>
-    <updated>2019-10-04T07:09:44.443Z</updated>
+    <updated>2019-10-04T08:58:55.851Z</updated>
     
     <summary type="html">
     
@@ -40,7 +40,7 @@
     </summary>
     
     
-      <category term="Hexo" scheme="http://humblebone.github.io/tags/Hexo/"/>
+      <category term="Hexo" scheme="https://humblebone.com/tags/Hexo/"/>
     
   </entry>
   

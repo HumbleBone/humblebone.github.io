@@ -1,0 +1,14 @@
+User-agent: *
+Allow: /
+Allow: /archives/
+Allow: /tags/
+Allow: /categories/
+Allow: /tags/
+Allow: /about/
+Allow: /contact/
+
+Disallow: /js/
+Disallow: /css/
+Disallow: /lib/
+
+Sitemap: https://humblebone.com
