@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://humblebone.github.io/"/>
-  <updated>2019-10-04T11:32:50.836Z</updated>
+  <updated>2019-10-05T10:54:09.441Z</updated>
   <id>http://humblebone.github.io/</id>
   
   <author>
@@ -17,11 +17,37 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>使用ShadowsocksR实现科学上网</title>
+    <link href="http://humblebone.github.io/2019/10/05/shi-yong-shadowsocksr-shi-xian-ke-xue-shang-wang/"/>
+    <id>http://humblebone.github.io/2019/10/05/shi-yong-shadowsocksr-shi-xian-ke-xue-shang-wang/</id>
+    <published>2019-10-05T07:01:00.000Z</published>
+    <updated>2019-10-05T10:54:09.441Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;写在前面🙊：&lt;/p&gt;
+&lt;p&gt;我最开始的时候是使用 Lantern
+        
+      
+    
+    </summary>
+    
+    
+      <category term="shadowsocksR" scheme="http://humblebone.github.io/tags/shadowsocksR/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Hexo 搭建自己的个性博客</title>
     <link href="http://humblebone.github.io/2019/09/24/hexo-da-jian-zi-ji-de-ge-xing-bo-ke/"/>
     <id>http://humblebone.github.io/2019/09/24/hexo-da-jian-zi-ji-de-ge-xing-bo-ke/</id>
     <published>2019-09-24T06:49:29.000Z</published>
-    <updated>2019-10-04T11:32:50.836Z</updated>
+    <updated>2019-10-05T06:48:49.570Z</updated>
     
     <summary type="html">
     

@@ -1,0 +1,981 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="使用ShadowsocksR实现科学上网, 董琦的博客">
+    <meta name="baidu-site-verification" content="zvOmqBkbqD">
+    <meta name="google-site-verification" content="Xx-vr0QBastl5kh2jEC1TEUUzIg9vjWx387Pl62wQHQ">
+    <meta name="description" content="
+写在前面🙊：
+我最开始的时候是使用 Lantern 翻墙的，那时候刚好蓝灯有做活动，一口气就买了两年的VPN，简单配置一下，就可以科学上网了。刚开始的一年用的还可以，除了遇到一些重大的日子（你们懂的），可能会出现为期几天的瘫痪，大部分时">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>使用ShadowsocksR实现科学上网 | 董琦的博客</title>
+    <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/favicon.ico">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+    <style type="text/css">
+        
+    </style>
+
+    <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
+    <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?46e79e71af0709a5b9106bf20cecc493";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+
+<body>
+
+<header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">董琦的博客</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right">
+    
+    <li class="hide-on-med-and-down">
+        <a href="/" class="waves-effect waves-light">
+            
+            <span>首页</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/tags" class="waves-effect waves-light">
+            
+            <span>标签</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/categories" class="waves-effect waves-light">
+            
+            <span>分类</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/archives" class="waves-effect waves-light">
+            
+            <span>归档</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/about" class="waves-effect waves-light">
+            
+            <span>关于</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/contact" class="waves-effect waves-light">
+            
+            <span>留言板</span>
+        </a>
+    </li>
+    
+    <li>
+        <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+            <i id="searchIcon" class="fa fa-search" title="搜索"></i>
+        </a>
+    </li>
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">董琦的博客</div>
+        <div class="logo-desc">
+            
+            厦门大学 | 电子与通信工程系 | SmartDSP实验室
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li>
+            <a href="/" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-link"></i>
+                
+                首页
+            </a>
+        </li>
+        
+        <li>
+            <a href="/tags" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-link"></i>
+                
+                标签
+            </a>
+        </li>
+        
+        <li>
+            <a href="/categories" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-link"></i>
+                
+                分类
+            </a>
+        </li>
+        
+        <li>
+            <a href="/archives" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-link"></i>
+                
+                归档
+            </a>
+        </li>
+        
+        <li>
+            <a href="/about" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-link"></i>
+                
+                关于
+            </a>
+        </li>
+        
+        <li>
+            <a href="/contact" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-link"></i>
+                
+                留言板
+            </a>
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/HumbleBone" class="waves-effect waves-light" target="_blank">
+                <i class="fa fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/HumbleBone" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/21.png')">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        使用ShadowsocksR实现科学上网
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 20px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                        <a href="/tags/shadowsocksR/" target="_blank">
+                            <span class="chip bg-color">shadowsocksR</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                <div class="post-date info-break-policy">
+                    <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2019-10-05
+                </div>
+
+                <div class="post-author info-break-policy">
+                    <i class="fa fa-user-o fa-fw"></i>作者:&nbsp;&nbsp;
+                    
+                    董琦
+                    
+                </div>
+
+                
+                
+                <div class="info-break-policy">
+                    <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    1.9k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    7 分
+                </div>
+                
+                
+
+                
+                <div id="busuanzi_container_page_pv" class="info-break-policy">
+                    <i class="fa fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                    <span id="busuanzi_value_page_pv"></span>
+                </div>
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <blockquote>
+<p>写在前面🙊：</p>
+<p>我最开始的时候是使用 Lantern 翻墙的，那时候刚好蓝灯有做活动，一口气就买了两年的VPN，简单配置一下，就可以科学上网了。刚开始的一年用的还可以，除了遇到一些重大的日子（你们懂的），可能会出现为期几天的瘫痪，大部分时间都还算凑合。过了一年之后，蓝灯就开始经常出现间歇性翻不了墙，VPN的主机地址不是日本就是新加坡这两个地方，没有办法选择节点。想着上官网论坛求救一手，也都是万年不变的 <code>蓝灯常见问题解决办法</code>，感觉自己已经逐渐被抛弃了😶。于是，就开始了解其他更靠谱的科学上网的方式，如果你也和我有这样的遭遇，那也可以尝试一下ShadowsocksR（以下简称ssr）的搭建教程。让大家都能共享自由的互联网🌍。</p>
+</blockquote>
+<h2 id="选择SSR的好处"><a href="#选择SSR的好处" class="headerlink" title="选择SSR的好处"></a>选择SSR的好处</h2><ul>
+<li>可以自己选择 VPS 服务器，根据自己的需求，选择不同的节点，由于是个人服务器，所以IP被封的几率会小很多，就算被封了，也可以重新再搭建一个服务器，方便很多。</li>
+<li>主流的服务器商可选择的有很多，每个月的流量也完全够自己用，甚至完全可以和自己信任的小伙伴一起合租一个，价格上便宜很多，Github上通过学生认证之后，还可以获取 <code>DigitalOcean</code> <a href="https://education.github.com/pack" target="_blank" rel="noopener">学生优惠</a>。</li>
+<li>相比于 Lantern 这种直接提供VPN的服务商而言，科学上网的速度和稳定性简直不要太好，而且还可以自己选择充值多少，万一服务商挂了，钱也不至于打水漂了。</li>
+</ul>
+<h2 id="购买VPS服务器"><a href="#购买VPS服务器" class="headerlink" title="购买VPS服务器"></a>购买VPS服务器</h2><p>现在VPS服务器商有很多，其中我个人比较推荐的就是 <code>Vultr</code> 和 <code>DigitalOcean</code> （搬瓦工），这两个服务器商都是可以随时部署随时摧毁服务器，按小时计费，同时还可以用支付宝或者是微信支付。我个人是选择  <code>Vultr</code> 的 VPS 服务器。</p>
+<p>首先登陆 <a href="https://www.vultr.com/" target="_blank" rel="noopener">Vultr</a> 官网，进行注册和登陆，在充值一定金额之后，就可以开始部署服务器，选择 <code>Deploy new server</code>  ，之后按照如下步骤部署服务器：</p>
+<p><strong>1、选择服务器</strong></p>
+<p><img src="/2019/10/05/shi-yong-shadowsocksr-shi-xian-ke-xue-shang-wang/1.png" alt=""></p>
+<p><strong>2、选择节点</strong></p>
+<p><code>Vultr</code> 官网一共提供了16个节点供用户选择，起初我在选择节点的时候，上网查了一下。大部分人都推荐选择美国西部的洛杉矶和硅谷这两个机房，这是除新加坡和日本之外两个离大陆最近的机房，所以速度上会更快。但是，经过我自己测试一段时间之后，我觉得芝加哥的机房速度也还不错，尤其是不会出现晚上高峰期的情况。<code>Vultr</code> 官网提供了测速的 👉<a href="https://www.vultr.com/resources/faq/#downloadspeedtests" target="_blank" rel="noopener">地址</a>，建议大家根据自己的位置测个速之后，再做选择。</p>
+<p><img src="/2019/10/05/shi-yong-shadowsocksr-shi-xian-ke-xue-shang-wang/2.png" alt=""></p>
+<p><strong>3、选择服务器系统</strong></p>
+<p>系统推荐选择 <code>CentOS</code>，目前提供三个版本的系统，系统为64位的</p>
+<p><img src="/2019/10/05/shi-yong-shadowsocksr-shi-xian-ke-xue-shang-wang/3.png" alt=""></p>
+<p><strong>4、选择套餐</strong></p>
+<p>对于学生而言，实惠为主，所以这里我选择的是一个月5美金的套餐，折合人名币大约35元一个月。如果合租的话那就是一个月18元左右，对于学生党而言，也还可以接受。一个月的带宽上限为1000GB，这个大家完全不用担心，就算你经常上youtube看视频，也是够用的，当然这里的服务器是从你一开始部署之后，就开始计费了。如果你不想用了，你单单关闭shadowsocksR是没有用的，只有在你摧毁服务器之后才不计费。</p>
+<p><img src="/2019/10/05/shi-yong-shadowsocksr-shi-xian-ke-xue-shang-wang/4.png" alt=""></p>
+<p><strong>5、部署成功</strong></p>
+<p>套餐选择之后，就可以部署了。接着等待服务器启动完成，看到Status是绿色的Running就是启动完成了，这个过程大概需要1-3分钟。</p>
+<p><img src="/2019/10/05/shi-yong-shadowsocksr-shi-xian-ke-xue-shang-wang/5.png" alt=""></p>
+<p>我们把部署好的服务器IP地址和密码记录下来，后面会用到，这个很重要。为了测试你的IP地址是否可用，你可以打开本地的终端，ping一下你的IP地址，看一下信息。</p>
+<p><img src="/2019/10/05/shi-yong-shadowsocksr-shi-xian-ke-xue-shang-wang/6.png" alt=""></p>
+<p>如果一切顺利的话，那么恭喜你，你的服务器就算部署就算成功了🤟</p>
+<h2 id="服务器安装SSR"><a href="#服务器安装SSR" class="headerlink" title="服务器安装SSR"></a>服务器安装SSR</h2><p>windows下ssh连接需要下载Xshell，所以我们现需要安装一下Xshell，具体安装过程这里就不详细展开了，默认下载成功之后，开始配置，具体步骤可以参考这篇<a href="https://github.com/zhaoweih/Shadowsocks-Tutorial" target="_blank" rel="noopener">文章</a> 。</p>
+<h4 id="安装SSR"><a href="#安装SSR" class="headerlink" title="安装SSR"></a>安装SSR</h4><p>1、假设你已经通过ssh连接上服务器了，这时候我们开始一键安装SSR，因为前人的帮助，使得我们在这一步基本不需要做什么，只需在终端输入相应的指令即可。</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">wget</span> --no-check-certificate https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocksR.sh
+<span class="token function">chmod</span> +x shadowsocksR.sh
+./shadowsocksR.sh 2<span class="token operator">></span><span class="token operator">&amp;</span>1 <span class="token operator">|</span> <span class="token function">tee</span> shadowsocksR.log<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>2、接下来设置密码、端口，加密方式，协议，混淆（obfs）就可以了。</p>
+<p>3、安装完成后，会有脚本提示如下：</p>
+<pre class="line-numbers language-text"><code class="language-text">Congratulations, ShadowsocksR server install completed!
+Your Server IP        :your_server_ip
+Your Server Port      :your_server_port
+Your Password         :your_password
+Your Protocol         :your_protocol
+Your obfs             :your_obfs
+Your Encryption Method:your_encryption_method
+
+Welcome to visit:https://shadowsocks.be/9.html
+Enjoy it!<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="SSR常用指令"><a href="#SSR常用指令" class="headerlink" title="SSR常用指令"></a>SSR常用指令</h4><ul>
+<li>卸载</li>
+</ul>
+<pre class="line-numbers language-bash"><code class="language-bash">./shadowsocksR.sh uninstall<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<ul>
+<li>启动</li>
+</ul>
+<pre class="line-numbers language-bash"><code class="language-bash">/etc/init.d/shadowsocks start<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<ul>
+<li>停止</li>
+</ul>
+<pre class="line-numbers language-bash"><code class="language-bash">/etc/init.d/shadowsocks stop<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<ul>
+<li>重启</li>
+</ul>
+<pre class="line-numbers language-bash"><code class="language-bash">/etc/init.d/shadowsocks restart<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h4 id="文件目录"><a href="#文件目录" class="headerlink" title="文件目录"></a>文件目录</h4><ol>
+<li>配置文件路径：<code>/etc/shadowsocks.json</code></li>
+<li>日志文件路径：<code>/var/log/shadowsocks.log</code></li>
+<li>代码安装目录：<code>/usr/local/shadowsocks</code></li>
+</ol>
+<h4 id="配置多用户"><a href="#配置多用户" class="headerlink" title="配置多用户"></a>配置多用户</h4><pre class="line-numbers language-bash"><code class="language-bash"><span class="token punctuation">{</span>
+  <span class="token string">"server"</span><span class="token keyword">:</span><span class="token string">"0.0.0.0"</span>,
+  <span class="token string">"server_ipv6"</span><span class="token keyword">:</span> <span class="token string">"[::]"</span>,
+  <span class="token string">"local_address"</span><span class="token keyword">:</span><span class="token string">"127.0.0.1"</span>,
+  <span class="token string">"local_port"</span>:1080,
+  <span class="token string">"port_password"</span>:<span class="token punctuation">{</span>
+    <span class="token string">"8989"</span><span class="token keyword">:</span><span class="token string">"password1"</span>,
+    <span class="token string">"8990"</span><span class="token keyword">:</span><span class="token string">"password2"</span>,
+    <span class="token string">"8991"</span><span class="token keyword">:</span><span class="token string">"password3"</span>
+  <span class="token punctuation">}</span>,
+  <span class="token string">"timeout"</span>:300,
+  <span class="token string">"method"</span><span class="token keyword">:</span><span class="token string">"aes-256-cfb"</span>,
+  <span class="token string">"protocol"</span><span class="token keyword">:</span> <span class="token string">"origin"</span>,
+  <span class="token string">"protocol_param"</span><span class="token keyword">:</span> <span class="token string">""</span>,
+  <span class="token string">"obfs"</span><span class="token keyword">:</span> <span class="token string">"plain"</span>,
+  <span class="token string">"obfs_param"</span><span class="token keyword">:</span> <span class="token string">""</span>,
+  <span class="token string">"redirect"</span><span class="token keyword">:</span> <span class="token string">""</span>,
+  <span class="token string">"dns_ipv6"</span><span class="token keyword">:</span> false,
+  <span class="token string">"fast_open"</span><span class="token keyword">:</span> false,
+  <span class="token string">"workers"</span><span class="token keyword">:</span> 1
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="Windows客户端下载SSR"><a href="#Windows客户端下载SSR" class="headerlink" title="Windows客户端下载SSR"></a>Windows客户端下载SSR</h2><p>首先给出Windows客户端的<a href="https://github.com/shadowsocksr-backup/shadowsocksr-csharp" target="_blank" rel="noopener">下载地址</a> ，根据你系统安装 .NET Framework v2.0或4.0的支持库 来选择客户端中的 <strong>ShadowsocksR-dotnet2.0.exe</strong> 或 <strong>ShadowsocksR-dotnet4.0.exe</strong> 并打开客户端。</p>
+<p>根据自己在服务器端配置SSR的密码、端口，加密方式，协议，混淆（obfs），相应的在客户端输入信息</p>
+<p><img src="/2019/10/05/shi-yong-shadowsocksr-shi-xian-ke-xue-shang-wang/7.png" alt=""></p>
+<h4 id="启动代理"><a href="#启动代理" class="headerlink" title="启动代理"></a>启动代理</h4><p>1、选择系统代理模式为PAC模式</p>
+<p>2、选择系统代理规则为绕过局域网和大陆</p>
+<ul>
+<li><p><strong>绕过局域网</strong>，局域网内IP 不走代理直连，局域网外IP 都走代理。</p>
+</li>
+<li><p><strong>绕过局域网和大陆</strong>，访问网站的是大陆 IP 都不走代理直连，访问非大陆 IP 的网站都走代理。</p>
+</li>
+</ul>
+<p>3、更新PAC为GFWList</p>
+<p>以上步骤全部结束之后，就可以上google测试一下，如果你发现浏览youtube视频的时候速度不够快，我们还可以在服务器端开启Google的BBR内核脚本加速TCP</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">wget</span> --no-check-certificate https://github.com/teddysun/across/raw/master/bbr.sh <span class="token operator">&amp;&amp;</span> <span class="token function">chmod</span> +x bbr.sh <span class="token operator">&amp;&amp;</span> ./bbr.sh<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>安装完成后，脚本会提示需要重启 VPS，输入 y 并回车后重启。</p>
+<p>重启完成后，进入 VPS，验证一下是否成功安装最新内核并开启 TCP BBR，输入以下命令：  </p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">uname</span> -r<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>如果出现相应的版本号那么恭喜你成功了，最后祝大家使用愉快🍾🍾🍾。</p>
+<h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><p>1、 <a href="https://github.com/zhaoweih/Shadowsocks-Tutorial" target="_blank" rel="noopener">给小白的Shadowsocks和V2ray翻墙教程</a></p>
+<p>2、<a href="[https://walesexcitedmei.github.io/2018/11/26/SSR-ShadowsocksR-%E9%85%8D%E7%BD%AE%E5%8F%8A%E4%BD%BF%E7%94%A8/](https://walesexcitedmei.github.io/2018/11/26/SSR-ShadowsocksR-配置及使用/)">ShadowsocksR 配置及使用</a></p>
+<p>3、<a href="https://github.com/shadowsocksr-backup/shadowsocks-rss/blob/master/ssr.md" target="_blank" rel="noopener">ShadowsocksR 协议插件文档</a></p>
+<p>4、<a href="https://github.com/shadowsocksr-backup/shadowsocks-rss/wiki/config.json" target="_blank" rel="noopener">SSR配置文件各项说明</a></p>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
+            </div>
+            <hr />
+
+            
+
+            <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    <div class="social-share" data-disabled="qzone" data-wechat-qrcode-helper="<p>微信里点“发现”->“扫一扫”二维码便可查看分享。</p>"></div>
+    
+</div>
+
+<script src="/libs/share/js/social-share.min.js"></script>
+
+            
+
+
+        </div>
+    </div>
+
+    
+    <link rel="stylesheet" href="/libs/gitalk/gitalk.css">
+<link rel="stylesheet" href="/css/my-gitalk.css">
+
+<div class="card gitalk-card" data-aos="fade-up">
+    <div id="gitalk-container" class="card-content"></div>
+</div>
+
+<script src="/libs/gitalk/gitalk.min.js"></script>
+<script>
+    let gitalk = new Gitalk({
+        clientID: 'bc48d4fb41d8bf1bbfd2',
+        clientSecret: '50ff05bc855ac4866f886ee24de128cc4034e2db',
+        repo: 'HumbleBone.github.io',
+        owner: 'HumbleBone',
+        admin: "HumbleBone",
+        id: '2019/10/05/shi-yong-shadowsocksr-shi-xian-ke-xue-shang-wang/',
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    });
+
+    gitalk.render('gitalk-container');
+</script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/2019/10/05/shi-yong-shadowsocksr-shi-xian-ke-xue-shang-wang/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/21.png" class="responsive-img" alt="使用ShadowsocksR实现科学上网">
+                        
+                        <span class="card-title">使用ShadowsocksR实现科学上网</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            在Windows客户端使用ShadowsocksR的小白搭建教程，翻越这堵高墙，让你我都能共享自由的互联网。
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-10-05
+                            </span>
+                        <span class="publish-author">
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/shadowsocksR/" target="_blank">
+                        <span class="chip bg-color">shadowsocksR</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2019/09/24/hexo-da-jian-zi-ji-de-ge-xing-bo-ke/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/8.png" class="responsive-img" alt="Hexo 搭建自己的个性博客">
+                        
+                        <span class="card-title">Hexo 搭建自己的个性博客</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            本篇教程主要记录使用 hexo-theme-matery 主题中遇到的一些问题，以及如何对该主题的博客进行个性化定制，优化功能。
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-09-24
+                            </span>
+                        <span class="publish-author">
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Hexo/" target="_blank">
+                        <span class="chip bg-color">Hexo</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+</div>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="fa fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fa fa-list"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            // headingsOffset: -205,
+            headingSelector: 'h1, h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h1, h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).slideUp(500);
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).slideDown(500);
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+    
+
+</main>
+
+
+<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
+    });
+</script>
+
+<footer class="page-footer bg-color">
+    <div class="container row center-align">
+        <div class="col s12 m8 l8 copy-right">
+            &copy; 2019 HumbleBone. All Rights Reserved.
+
+            
+            &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
+            <span class="white-color">4.8k</span>
+            
+
+            <br>
+            <span id="sitetime"></span>
+
+            
+            
+            <br>
+            
+            
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/humblebone" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fa fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:dongqiccc@gmail.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fa fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+    <a href="https://user.qzone.qq.com/1065159566" class="tooltipped" target="_blank" data-tooltip="访问我的QQ空间" data-position="top" data-delay="50">
+        <i class="fa fa-qq"></i>
+    </a>
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fa fa-rss"></i>
+    </a>
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+<!-- 不蒜子计数初始值纠正 -->
+<script>
+    $(document).ready(function () {
+
+        var int = setInterval(fixCount, 50);
+        var pvcountOffset = 80000;
+        var uvcountOffset = 20000;
+
+        function fixCount() {
+            if (document.getElementById("busuanzi_container_site_pv").style.display != "none") {
+                $("#busuanzi_value_site_pv").html(parseInt($("#busuanzi_value_site_pv").html()) + pvcountOffset);
+                clearInterval(int);
+            }
+            if ($("#busuanzi_container_site_pv").css("display") != "none") {
+                $("#busuanzi_value_site_uv").html(parseInt($("#busuanzi_value_site_uv").html()) + uvcountOffset); // 加上初始数据 
+                clearInterval(int);
+            }
+        }
+    });
+</script>
+
+
+
+<script language=javascript>
+    function siteTime() {
+        window.setTimeout("siteTime()", 1000);
+        var seconds = 1000;
+        var minutes = seconds * 60;
+        var hours = minutes * 60;
+        var days = hours * 24;
+        var years = days * 365;
+        var today = new Date();
+        var todayYear = today.getFullYear();
+        var todayMonth = today.getMonth() + 1;
+        var todayDate = today.getDate();
+        var todayHour = today.getHours();
+        var todayMinute = today.getMinutes();
+        var todaySecond = today.getSeconds();
+        /* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+        year - 作为date对象的年份，为4位年份值
+        month - 0-11之间的整数，做为date对象的月份
+        day - 1-31之间的整数，做为date对象的天数
+        hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+        minutes - 0-59之间的整数，做为date对象的分钟数
+        seconds - 0-59之间的整数，做为date对象的秒数
+        microseconds - 0-999之间的整数，做为date对象的毫秒数 */
+        var t1 = Date.UTC(2018, 08, 22, 00, 00, 00); //北京时间2018-8-22 00:00:00
+        var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+        var diff = t2 - t1;
+        var diffYears = Math.floor(diff / years);
+        var diffDays = Math.floor((diff / days) - diffYears * 365);
+        var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+        var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) / minutes);
+        var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours - diffMinutes * minutes) / seconds);
+        document.getElementById("sitetime").innerHTML = "本站已运行 " + diffYears + " 年 " + diffDays + " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+    }/*因为建站时间还没有一年，就将之注释掉了。需要的可以取消*/
+    siteTime();
+</script>
+
+
+<!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fa fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+<!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fa fa-angle-up"></i>
+    </a>
+</div>
+
+
+<script src="/libs/materialize/materialize.min.js"></script>
+<script src="/libs/masonry/masonry.pkgd.min.js"></script>
+<script src="/libs/aos/aos.js"></script>
+<script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+<script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+<script src="/js/matery.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+
+
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+
+
+</body>
+</html>
