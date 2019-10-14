@@ -2,16 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://humblebone.github.io/2019/10/14/shi-yong-pycharm-yuan-cheng-lian-jie-fu-wu-qi/</loc>
+    
+    <lastmod>2019-10-14T07:28:57.029Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://humblebone.github.io/2019/10/05/shi-yong-shadowsocksr-shi-xian-ke-xue-shang-wang/</loc>
     
-    <lastmod>2019-10-05T10:54:09.441Z</lastmod>
+    <lastmod>2019-10-14T06:24:00.820Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://humblebone.github.io/2019/09/24/hexo-da-jian-zi-ji-de-ge-xing-bo-ke/</loc>
     
-    <lastmod>2019-10-05T06:48:49.570Z</lastmod>
+    <lastmod>2019-10-14T06:23:58.269Z</lastmod>
     
   </url>
   
@@ -44,14 +51,14 @@
   </url>
   
   <url>
-    <loc>http://humblebone.github.io/tags/index.html</loc>
+    <loc>http://humblebone.github.io/categories/index.html</loc>
     
     <lastmod>2019-08-21T07:26:13.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://humblebone.github.io/categories/index.html</loc>
+    <loc>http://humblebone.github.io/tags/index.html</loc>
     
     <lastmod>2019-08-21T07:26:13.000Z</lastmod>
     

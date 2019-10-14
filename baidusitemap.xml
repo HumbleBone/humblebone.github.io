@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://humblebone.github.io/2019/10/14/shi-yong-pycharm-yuan-cheng-lian-jie-fu-wu-qi/</loc>
+    <lastmod>2019-10-14</lastmod>
+  </url>  <url>
     <loc>http://humblebone.github.io/2019/10/05/shi-yong-shadowsocksr-shi-xian-ke-xue-shang-wang/</loc>
-    <lastmod>2019-10-05</lastmod>
+    <lastmod>2019-10-14</lastmod>
   </url>  <url>
     <loc>http://humblebone.github.io/2019/09/24/hexo-da-jian-zi-ji-de-ge-xing-bo-ke/</loc>
-    <lastmod>2019-10-05</lastmod>
+    <lastmod>2019-10-14</lastmod>
   </url>
 </urlset>
