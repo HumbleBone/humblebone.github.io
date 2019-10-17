@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>每天一道leetcode提升你的编程能力</title>
+      <link href="/2019/10/17/mei-tian-yi-dao-leetcode-ti-sheng-ni-de-bian-cheng-neng-li/"/>
+      <url>/2019/10/17/mei-tian-yi-dao-leetcode-ti-sheng-ni-de-bian-cheng-neng-li/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p><code>Question</code> :  为什么突然会萌生出每天坚持编写一道 <code>leetcode</code> 来提升自己的编程能力呢？</p><p><code>Answer</code> ：其实步入研究生已经一个多月了，这学期修了一门数据结构与算法设计，老师布置过几次大作业，感觉一道挺简单的题目也要花好多时间才能解决😂。再想想要是以后面试，就这种水平…….🤮  诶……这都是本科欠下的账😭，没办法，编程这种东西就是要每天坚持练，才能提升。同时，也是为了毕业之后，面试算法的时候不至于一道题目想半天，未雨绸缪吧。所以，就萌生这个想法🐡！</p></blockquote><blockquote><p>前面balabala了一大堆，我们马上进入正题，这篇文章主要记录如何高效使用 <code>leetcode</code> 编程，提升自己的代码水平。遇到这种问题，我们一般的做法肯定都是先知乎一手。不错，知乎上面有很多前辈给出了自己的经验 <a href="https://www.zhihu.com/question/26580300" target="_blank" rel="noopener">传送门</a>👈。</p></blockquote><h2 id="选择什么语言"><a href="#选择什么语言" class="headerlink" title="选择什么语言"></a>选择什么语言</h2><p>知乎上大部分人都是推荐使用 <code>java</code> 、 <code>python</code> 、 <code>C++</code>。不怎么推荐使用C语言，好像会遇到很多语言细节的问题，时间成本太高。同时我们主要学习的是遇到一个问题的想法和思路，所以这里我们选择 <code>python</code> 作为我们编程的学习语言。</p><h2 id="有哪些开源的攻略"><a href="#有哪些开源的攻略" class="headerlink" title="有哪些开源的攻略"></a>有哪些开源的攻略</h2><p>我主要了解到在 <code>github</code> 上有两个高星的项目，都是中文的。项目链接和简介我直接放在下面：</p><p>1、项目一</p><ul><li>项目地址： <a href="https://github.com/azl397985856/leetcode" target="_blank" rel="noopener">https://github.com/azl397985856/leetcode</a> </li><li>亮点：<ul><li>LeetCode 经典题目的解析，包括思路、关键点和具体的代码实现。 </li><li>支持 <code>java</code>  、 <code>python</code> 语言，而且任然在更新中</li><li>开放每天一道leetcode题目，供大家讨论</li></ul></li></ul><p>2、项目二</p><ul><li>项目地址： <a href="https://github.com/MisterBooo/LeetCodeAnimation" target="_blank" rel="noopener">https://github.com/MisterBooo/LeetCodeAnimation</a> </li><li>亮点：<ul><li>将 LeetCode 上所有的题目都用动画的形式演示出来 </li></ul></li></ul><p>上面两个项目我们主要用来学习思路，做完一遍之后能够实现自己的见解。同时在 LeetCode 官网上面也有很多优质的解答，都可以汲取别人的思路。</p><h2 id="选择什么工具编写代码"><a href="#选择什么工具编写代码" class="headerlink" title="选择什么工具编写代码"></a>选择什么工具编写代码</h2><p>当然，你可以直接在 LeetCode 官网上提供的在线编译器编写代码，这里我给大家推荐一种更加方便舒服的工具：<code>VSCode + LeetCode 插件</code>，可支持在 <code>VSCode</code> 中编译调试，并提交。</p><p><img src="/2019/10/17/mei-tian-yi-dao-leetcode-ti-sheng-ni-de-bian-cheng-neng-li/1.png" alt=""></p><p>LeetCode 有两个 <code>Endpoint</code>，我们一般选择中国节点，该插件目前虽然只是预览版，但是我个人用下来基本没有什么问题。和网站上一样，可以根据难易、标签来选择题目。每次做完的题目都可以保存下来（需要自己创建一个文件夹），方便日后查看。</p><p>在使用过程中，我们选择一个题目之后，界面只会显示这道题目的简介。这时候，我们需要<code>右键</code>点击这道题目，选择 <code>show the problem</code>， 首次选择会让你选择编程语言和创建工作目录，之后就可以开始编程了。</p><p><img src="/2019/10/17/mei-tian-yi-dao-leetcode-ti-sheng-ni-de-bian-cheng-neng-li/2.png" alt=""></p><p>当我们编写完一道题目之后，我们可以选择 <code>Submmit|Test</code>，进行测试或者提交。</p><p><img src="/2019/10/17/mei-tian-yi-dao-leetcode-ti-sheng-ni-de-bian-cheng-neng-li/3.png" alt=""></p><h2 id="如何最大化编程效益"><a href="#如何最大化编程效益" class="headerlink" title="如何最大化编程效益"></a>如何最大化编程效益</h2><p>因为是每天一道 LeetCode 编程题，所以我就要考虑在有效时间内如何最大化编程效益🧐？</p><blockquote><p>1、按照 <code>Tag</code> 标签先由易到难专攻一个知识点的题目，一开始可能会比较吃力，后面应该就会好很多。</p><p>2、身边刚好有一本《算法导论》，可以结合书上的知识点，先做相关知识的阅读，之后针对这个知识点找相应的 <code>Tag</code> 刷题。</p><p>3、 每道题目做完之后都要记录自己的思路，答案不是最重要的。记录思路，留在日后总结。</p><p>4、将自己的思路上传到 <code>Github</code> 上。</p></blockquote><p>🐤路漫漫其修远兮，吾将上下而求索！！！</p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> 编程 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> leetcode </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>使用Pycharm远程连接服务器</title>
       <link href="/2019/10/14/shi-yong-pycharm-yuan-cheng-lian-jie-fu-wu-qi/"/>
       <url>/2019/10/14/shi-yong-pycharm-yuan-cheng-lian-jie-fu-wu-qi/</url>
