@@ -11,8 +11,8 @@
 
 本篇教程主要记录使用 hexo-theme-matery 主题中遇到的一些问题，以及如何对该主题的博客进行个性化定制，优化功能。
 
-Hexo 常用指令$ hexo new post &amp;lt;title&gt;   # 新建一篇文章
-$ hex">
+Hexo 常用指令$ hexo new post &amp;lt;title&amp;gt;   # 新建一篇文章
+$ ">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -460,7 +460,7 @@ $ hex">
 <blockquote>
 <p>本篇教程主要记录使用 <code>hexo-theme-matery</code> 主题中遇到的一些问题，以及如何对该主题的博客进行个性化定制，优化功能。</p>
 </blockquote>
-<h2 id="Hexo-常用指令"><a href="#Hexo-常用指令" class="headerlink" title="Hexo 常用指令"></a>Hexo 常用指令</h2><pre class="line-numbers language-bash"><code class="language-bash">$ hexo new post <span class="token operator">&lt;</span>title<span class="token operator">></span>   <span class="token comment" spellcheck="true"># 新建一篇文章</span>
+<h2 id="Hexo-常用指令"><a href="#Hexo-常用指令" class="headerlink" title="Hexo 常用指令"></a>Hexo 常用指令</h2><pre class="line-numbers language-bash"><code class="language-bash">$ hexo new post <span class="token operator">&lt;</span>title<span class="token operator">&gt;</span>   <span class="token comment" spellcheck="true"># 新建一篇文章</span>
 $ hexo g                  <span class="token comment" spellcheck="true"># 生成静态文件</span>
 $ hexo s                  <span class="token comment" spellcheck="true"># 本地预览查看(http://localhost:4000/)</span>
 $ hexo d                  <span class="token comment" spellcheck="true"># 部署到网站</span>
@@ -500,9 +500,9 @@ $ hexo version            <span class="token comment" spellcheck="true"># 查看
 <li>列表内容</li>
 </ul>
 <p>4、引用</p>
-<pre class="line-numbers language-markdown"><code class="language-markdown"><span class="token blockquote punctuation">></span> 引用内容
-<span class="token blockquote punctuation">>></span> 引用内容
-<span class="token blockquote punctuation">>>></span> 引用内容<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-markdown"><code class="language-markdown"><span class="token blockquote punctuation">&gt;</span> 引用内容
+<span class="token blockquote punctuation">&gt;&gt;</span> 引用内容
+<span class="token blockquote punctuation">&gt;&gt;&gt;</span> 引用内容<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <blockquote>
 <p>引用内容</p>
 <blockquote>
@@ -677,10 +677,10 @@ clicklove<span class="token punctuation">:</span>
 <p>4、修改首页banner和每篇文章封面的featureeimages图片的尺寸大小</p>
 <p>matery主题的封面图片是根据周一到周日不同天数，来选取不同的图片。其使用的函数为：</p>
 <pre class="line-numbers language-python"><code class="language-python"><span class="token operator">//</span> 每天切换 banner 图<span class="token punctuation">.</span>  Switch banner image every day<span class="token punctuation">.</span>
-<span class="token operator">&lt;</span>script<span class="token operator">></span>
+<span class="token operator">&lt;</span>script<span class="token operator">&gt;</span>
 $<span class="token punctuation">(</span><span class="token string">'.bg-cover'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>css<span class="token punctuation">(</span><span class="token string">'background-image'</span><span class="token punctuation">,</span> <span class="token string">'url(/medias/banner/'</span> 
                    <span class="token operator">+</span> new Date<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>getDay<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">'.png)'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>而每篇文章的封面图片如果没有指定的话，是采用哈希值取不同的特色图片，实现的函数如下：</p>
 <pre class="line-numbers language-python"><code class="language-python">var featureimg <span class="token operator">=</span> <span class="token string">'/medias/bg.jpg'</span><span class="token punctuation">;</span>
 <span class="token keyword">if</span> <span class="token punctuation">(</span>page<span class="token punctuation">.</span>img<span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -726,8 +726,8 @@ hexo d<span aria-hidden="true" class="line-numbers-rows"><span></span><span></sp
 </blockquote>
 <h4 id="谷歌收录"><a href="#谷歌收录" class="headerlink" title="谷歌收录"></a>谷歌收录</h4><p>登陆 <a href="https://www.google.com/webmasters/" target="_blank" rel="noopener">谷歌站长平台</a>，提交自己博客的站点网址，对站点进行验证，选择验证的方式为HTML标签验证</p>
 <p>打开<code>themes/matery/layout/_partial/head.ejs</code>修改下面两行：</p>
-<pre class="line-numbers language-bash"><code class="language-bash"><span class="token operator">&lt;</span>meta name<span class="token operator">=</span><span class="token string">"baidu-site-verification"</span> content<span class="token operator">=</span><span class="token string">"xxx"</span> /<span class="token operator">></span>
-<span class="token operator">&lt;</span>meta name<span class="token operator">=</span><span class="token string">"google-site-verification"</span> content<span class="token operator">=</span><span class="token string">"xxx"</span> /<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token operator">&lt;</span>meta name<span class="token operator">=</span><span class="token string">"baidu-site-verification"</span> content<span class="token operator">=</span><span class="token string">"xxx"</span> /<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span>meta name<span class="token operator">=</span><span class="token string">"google-site-verification"</span> content<span class="token operator">=</span><span class="token string">"xxx"</span> /<span class="token operator">&gt;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <h4 id="添加蜘蛛协议"><a href="#添加蜘蛛协议" class="headerlink" title="添加蜘蛛协议"></a>添加蜘蛛协议</h4><p>蜘蛛协议就是告诉爬虫，你的哪些文件爬虫可以爬取，哪些不能的文件。</p>
 <p>新建一个<code>robots.txt</code>文件，添加以下内容，然后放到<code>/yoursite/source/</code>文件夹下面：</p>
 <pre class="line-numbers language-text"><code class="language-text">User-agent: *
@@ -1048,7 +1048,7 @@ Sitemap: https://humblebone.com<span aria-hidden="true" class="line-numbers-rows
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">6.5k</span>
+            <span class="white-color">6.6k</span>
             
 
             <br>
