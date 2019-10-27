@@ -430,7 +430,7 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.8k
+                    3k
                 </div>
                 
 
@@ -487,7 +487,7 @@
 <span class="token function">chmod</span> +x shadowsocksR.sh
 ./shadowsocksR.sh 2<span class="token operator">></span><span class="token operator">&amp;</span>1 <span class="token operator">|</span> <span class="token function">tee</span> shadowsocksR.log<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <p>2、接下来设置密码、端口，加密方式，协议，混淆（obfs）就可以了。</p>
-<p>这里注意密码可以自己设置，端口最好选择默认推荐的端口，加密方式选择 <code>none</code>，协议选择 <code>auth_chain_a</code> ，混淆选择 <code>tls1.2_ticket_auth</code>，关于协议和混淆的选择，可以查看参考文章。</p>
+<p>这里注意密码可以自己设置，端口最好选择默认推荐的端口，加密方式选择 <code>none</code>，协议选择 <code>auth_chain_a</code> ， 支持服务端自定义参数，参数为10进制整数，表示最大客户端同时使用数，最小值支持直接设置为1，此插件能实时响应实际的客户端数量（你的客户端至少有一个连接没有断开才能保证你占用了一个客户端数，否则设置为1时其它客户端一连接别的就一定连不上）。 混淆选择 <code>tls1.2_ticket_auth</code>，关于协议和混淆的选择，可以查看参考文章。</p>
 <p>3、安装完成后，会有脚本提示如下：</p>
 <pre class="line-numbers language-text"><code class="language-text">Congratulations, ShadowsocksR server install completed!
 Your Server IP        :your_server_ip
@@ -947,7 +947,7 @@ There are screens on:
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">7.5k</span>
+            <span class="white-color">7.6k</span>
             
 
             <br>
