@@ -430,7 +430,7 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.7k
+                    2.8k
                 </div>
                 
 
@@ -627,6 +627,7 @@ $ firewall-cmd --permanent --zone<span class="token operator">=</span>public --a
 <p>仅需要一行命令</p>
 <pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">wget</span> -qO- bench.sh <span class="token operator">|</span> <span class="token function">bash</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 </blockquote>
+<p><img src="/2019/10/05/shi-yong-shadowsocksr-shi-xian-ke-xue-shang-wang/8.png" alt=""></p>
 <h2 id="更新"><a href="#更新" class="headerlink" title="更新"></a>更新</h2><h3 id="Xshell-和-VPS主机之间总是断连"><a href="#Xshell-和-VPS主机之间总是断连" class="headerlink" title="Xshell 和 VPS主机之间总是断连"></a>Xshell 和 VPS主机之间总是断连</h3><p>最近我在修改一些配置的时候，我发现 Xshell SSH 连接 VPS 云主机的时候，总是会出现如下的报错：</p>
 <pre class="line-numbers language-bash"><code class="language-bash">Socket error Event: 32 Error: 10053.
 Connection closing<span class="token punctuation">..</span>.Socket close.
@@ -639,6 +640,18 @@ Disconnected from remote host<span class="token punctuation">(</span>洛杉矶<s
 <p>2、关闭防火墙 <a href="https://blog.csdn.net/qq_33764491/article/details/80118378" target="_blank" rel="noopener">链接</a></p>
 <p>3、IP地址冲突 </p>
 <p>目前还在一步一步排查是什么原因👯‍♂️👯‍♂️👯‍♂️</p>
+<p>如果你也遇到这种情况，建议使用 <code>screen</code> 指令，即使ssh连接断开，也能保存你之前的操作。</p>
+<pre class="line-numbers language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># screen vi ~/main.c //创建 screen 终端 ，并执行 vi命令</span>
+
+<span class="token comment" spellcheck="true"># screen -ls  //显示已创建的screen终端 </span>
+There are screens on:
+2433.pts-3.linux    <span class="token punctuation">(</span>2013年10月20日 16时48分59秒<span class="token punctuation">)</span>    <span class="token punctuation">(</span>Detached<span class="token punctuation">)</span>
+2428.pts-3.linux    <span class="token punctuation">(</span>2013年10月20日 16时48分05秒<span class="token punctuation">)</span>    <span class="token punctuation">(</span>Detached<span class="token punctuation">)</span>
+2284.pts-3.linux    <span class="token punctuation">(</span>2013年10月20日 16时14分55秒<span class="token punctuation">)</span>    <span class="token punctuation">(</span>Detached<span class="token punctuation">)</span>
+2276.pts-3.linux    <span class="token punctuation">(</span>2013年10月20日 16时13分18秒<span class="token punctuation">)</span>    <span class="token punctuation">(</span>Detached<span class="token punctuation">)</span>
+4 Sockets <span class="token keyword">in</span> /var/run/screen/S-root.
+
+<span class="token comment" spellcheck="true"># screen -r 2276 //连接 screen_id 为 2276 的 screen终端</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><p>1、 <a href="https://github.com/zhaoweih/Shadowsocks-Tutorial" target="_blank" rel="noopener">给小白的Shadowsocks和V2ray翻墙教程</a></p>
 <p>2、<a href="[https://walesexcitedmei.github.io/2018/11/26/SSR-ShadowsocksR-%E9%85%8D%E7%BD%AE%E5%8F%8A%E4%BD%BF%E7%94%A8/](https://walesexcitedmei.github.io/2018/11/26/SSR-ShadowsocksR-配置及使用/)">ShadowsocksR 配置及使用</a></p>
 <p>3、<a href="https://github.com/shadowsocksr-backup/shadowsocks-rss/blob/master/ssr.md" target="_blank" rel="noopener">ShadowsocksR 协议插件文档</a></p>
@@ -933,7 +946,7 @@ Disconnected from remote host<span class="token punctuation">(</span>洛杉矶<s
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">7.3k</span>
+            <span class="white-color">7.5k</span>
             
 
             <br>
