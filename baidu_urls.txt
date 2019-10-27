@@ -1,3 +1,4 @@
+http://humblebone.github.io/2019/10/27/python-pa-qu-google-baidu-tu-pian/
 http://humblebone.github.io/2019/10/17/mei-tian-yi-dao-leetcode-ti-sheng-ni-de-bian-cheng-neng-li/
 http://humblebone.github.io/2019/10/14/shi-yong-pycharm-yuan-cheng-lian-jie-fu-wu-qi/
 http://humblebone.github.io/2019/10/05/shi-yong-shadowsocksr-shi-xian-ke-xue-shang-wang/
