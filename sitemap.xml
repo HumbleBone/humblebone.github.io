@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://humblebone.github.io/2019/11/03/dong-tai-gui-hua/</loc>
+    
+    <lastmod>2019-11-03T02:01:53.564Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://humblebone.github.io/2019/10/27/python-pa-qu-google-baidu-tu-pian/</loc>
     
     <lastmod>2019-10-27T14:19:07.014Z</lastmod>
@@ -51,14 +58,14 @@
   </url>
   
   <url>
-    <loc>http://humblebone.github.io/archives/index.html</loc>
+    <loc>http://humblebone.github.io/categories/index.html</loc>
     
     <lastmod>2019-08-21T07:26:13.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://humblebone.github.io/categories/index.html</loc>
+    <loc>http://humblebone.github.io/archives/index.html</loc>
     
     <lastmod>2019-08-21T07:26:13.000Z</lastmod>
     

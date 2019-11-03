@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://humblebone.github.io/"/>
-  <updated>2019-10-27T14:19:07.014Z</updated>
+  <updated>2019-11-03T02:01:53.564Z</updated>
   <id>http://humblebone.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>动态规划</title>
+    <link href="http://humblebone.github.io/2019/11/03/dong-tai-gui-hua/"/>
+    <id>http://humblebone.github.io/2019/11/03/dong-tai-gui-hua/</id>
+    <published>2019-11-03T01:55:00.000Z</published>
+    <updated>2019-11-03T02:01:53.564Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;动态方法与分治算法很相似，都是通过递归求解子问题，最后将子问题的解重新组合来求解原问题。不同的是，分治算法将问题分解为互不相交的子问题，而动态规划应用与子问题重叠的情况，即不同的子问题具有公共的子问题。在这种情况下，分治算法会做许多不必要的工作，它
+        
+      
+    
+    </summary>
+    
+      <category term="编程" scheme="http://humblebone.github.io/categories/%E7%BC%96%E7%A8%8B/"/>
+    
+    
+      <category term="算法" scheme="http://humblebone.github.io/tags/%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
   
   <entry>
     <title>python爬取Google、Baidu图片</title>

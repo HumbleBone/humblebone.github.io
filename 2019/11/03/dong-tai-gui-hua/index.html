@@ -4,12 +4,11 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="使用Pycharm远程连接服务器, 董琦的博客">
+    <meta name="keywords" content="动态规划, 董琦的博客">
     <meta name="baidu-site-verification" content="zvOmqBkbqD">
     <meta name="google-site-verification" content="Xx-vr0QBastl5kh2jEC1TEUUzIg9vjWx387Pl62wQHQ">
     <meta name="description" content="
-困惑👾：
-我们在调试机器学习有关的python工程时，总会遇到这样的问题。就是，如何实现能够同步本地和服务器端的工程项目。正常的操作是👀，我们打开终端（比如MobaXterm）…… 然后，将本地编辑好的文件上传到服务器，这时候在终端再">
+动态方法与分治算法很相似，都是通过递归求解子问题，最后将子问题的解重新组合来求解原问题。不同的是，分治算法将问题分解为互不相交的子问题，而动态规划应用与子问题重叠的情况，即不同的子问题具有公共的子问题。在这种情况下，分治算法会做许多不必要">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +16,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>使用Pycharm远程连接服务器 | 董琦的博客</title>
+    <title>动态规划 | 董琦的博客</title>
     <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/favicon.ico">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -275,13 +274,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/24.png')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/11.png')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        使用Pycharm远程连接服务器
+                        动态规划
                     </div>
                 </div>
             </div>
@@ -392,8 +391,8 @@
                     
                     <div class="article-tag">
                         
-                        <a href="/tags/pycharm/" target="_blank">
-                            <span class="chip bg-color">pycharm</span>
+                        <a href="/tags/算法/" target="_blank">
+                            <span class="chip bg-color">算法</span>
                         </a>
                         
                     </div>
@@ -404,8 +403,8 @@
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                        <a href="/categories/工具/" class="post-category" target="_blank">
-                            工具
+                        <a href="/categories/编程/" class="post-category" target="_blank">
+                            编程
                         </a>
                         
                     </div>
@@ -416,7 +415,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-10-14
+                    2019-11-03
                 </div>
 
                 <div class="post-author info-break-policy">
@@ -430,14 +429,14 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    654
+                    1.1k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    3 分
                 </div>
                 
                 
@@ -454,32 +453,36 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <blockquote>
-<p>困惑👾：</p>
-<p>我们在调试机器学习有关的python工程时，总会遇到这样的问题。就是，如何实现能够同步本地和服务器端的工程项目。正常的操作是👀，我们打开终端（比如MobaXterm）…… 然后，将本地编辑好的文件上传到服务器，这时候在终端再运行程序，如此往复…… </p>
-<p>又或者是在服务器端直接调试程序，然后下次要在本地编辑的话，又要重新从服务器上下载代码，极其不方便🙁。</p>
-<p>那么，有没有更好的方法，让这种操作一体化，简去这种繁琐的操作🤔，答案是有😏。</p>
-<p>利用 <code>PyCharm</code> ，我们可以实现：</p>
-<ul>
-<li>在本地利用远程服务器的python编译器调试代码</li>
-<li>将本地修改好的代码同步到服务器（可以自动同步）</li>
-<li>将服务器上的项目直接下载下来</li>
-</ul>
+<p>动态方法与分治算法很相似，都是通过递归求解子问题，最后将子问题的解重新组合来求解原问题。不同的是，分治算法将问题分解为互不相交的子问题，而动态规划应用与子问题重叠的情况，即不同的子问题具有公共的子问题。在这种情况下，分治算法会做许多不必要的工作，它会反复求解那些公共子问题。而动态规划算法对每个子问题只求解一次，将其保存在一个表格中，从而无需每次求解一个子问题都要重新计算。是一种通过牺牲一定的存储空间来缩短算法整体的运行时间。</p>
 </blockquote>
-<h2 id="具体操作"><a href="#具体操作" class="headerlink" title="具体操作"></a>具体操作</h2><h4 id="下载PyCharm"><a href="#下载PyCharm" class="headerlink" title="下载PyCharm"></a>下载PyCharm</h4><p>PyCharm 分为专业版和社区版，我们要使用的远程功能只有专业版才有提供，如果你是在校的学生，你可以直接在PyCharm的<a href="https://www.jetbrains.com/pycharm/" target="_blank" rel="noopener">官网</a>上申请。如果你直接申请过 <code>Github</code> 的学生优惠包🛍️，你可以直接验证邮箱，之后注册一个账号（这个账号后面会用到），具体申请过程这里就不细说了。</p>
-<h4 id="配置Deployment"><a href="#配置Deployment" class="headerlink" title="配置Deployment"></a>配置Deployment</h4><p>1、我们打开pycharm工程界面后，选择 <code>tools</code> –&gt; <code>Deployment</code> –&gt; <code>Configuration</code></p>
-<p><img src="/2019/10/14/shi-yong-pycharm-yuan-cheng-lian-jie-fu-wu-qi/1.png" alt=""></p>
-<p>2、选择 <code>+</code> 新建一个 <code>sftp</code> 类型的部署配置，服务器名字自己随便起一个（易于区分就行）。然后，我们就可以设置服务器的地址和端口号（默认22，如果有修改填自己的端口号），用户名密码。</p>
-<p><img src="/2019/10/14/shi-yong-pycharm-yuan-cheng-lian-jie-fu-wu-qi/2.png" alt=""></p>
-<p>如果连接成功的话，会出现如下所示的界面。</p>
-<p><img src="/2019/10/14/shi-yong-pycharm-yuan-cheng-lian-jie-fu-wu-qi/3.png" alt=""></p>
-<p>3、设置mappings，用于项目的上传和下载。对于不同的项目，你可以设置多个映射。</p>
-<p><img src="/2019/10/14/shi-yong-pycharm-yuan-cheng-lian-jie-fu-wu-qi/4.png" alt=""></p>
-<p> 4、 另外打开 <code>Tools -&gt; Deployment -&gt; Options</code>，将 <code>Create Empty directories</code> 打上勾，要是指定的文件夹不存在，会自动创建。 </p>
-<h4 id="选择远程解释器"><a href="#选择远程解释器" class="headerlink" title="选择远程解释器"></a>选择远程解释器</h4><p>1、打开 <code>file</code> –&gt; <code>settings</code> ， 然后在右边，点击那个小齿轮进行设置。 选择项目的解释器，在项目的解释器位置选择新增。</p>
-<p><img src="/2019/10/14/shi-yong-pycharm-yuan-cheng-lian-jie-fu-wu-qi/5.png" alt=""></p>
-<p>2、添加ssh解释器</p>
-<p><img src="/2019/10/14/shi-yong-pycharm-yuan-cheng-lian-jie-fu-wu-qi/6.png" alt=""></p>
-<p>3、上述步骤结束后，就可以在本地调试代码，并部署到服务器上。</p>
+<h2 id="问题特点"><a href="#问题特点" class="headerlink" title="问题特点"></a>问题特点</h2><p>能采用动态规划求解的问题一般要具有三种性质：</p>
+<ul>
+<li><strong>最优化原理</strong>：如果问题的最优解所包含的子问题的解也是最优的，就称该问题具有最优子结构，即满足最优化原理。</li>
+<li><strong>无后效性</strong>：即某阶段状态一旦确定，就不受这个状态以后决策的影响。也就是说，某状态以后的过程不会影响以前的状态，只与当前状态有关。</li>
+<li><strong>有重叠子问题</strong>：即子问题之间不是互相独立的，一个子问题在下一阶段的决策中可能多次被重复利用到（该性质为动态规划算法相对其他算法的优势）</li>
+</ul>
+<h2 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h2><ol>
+<li><p><strong>划分阶段：</strong>按照问题的时间或空间特征，把问题分为若干个阶段。在划分阶段时，注意划分后的阶段一定要是有序的或者是可排序的，否则问题就无法求解。</p>
+</li>
+<li><p><strong>确定状态和状态变量：</strong>将问题发展到各个阶段时所处于的各种客观情况用不同的状态表示出来。当然，状态的选择要满足无后效性。</p>
+</li>
+<li><p><strong>确定决策并写出状态转移方程：</strong>因为决策和状态转移有着天然的联系，状态转移就是根据上一阶段的状态和决策来导出本阶段的状态。所以如果确定了决策，状态转移方程也就可写出。但事实上常常是反过来做，根据相邻两个阶段的状态之间的关系来确定决策方法和状态转移方程。</p>
+</li>
+<li><p><strong>寻找边界条件：</strong>给出的状态转移方程是一个递推式，需要一个递推的终止条件或边界条件。</p>
+</li>
+</ol>
+<p>实际应用中可以按以下几个简化的步骤进行设计：</p>
+<pre class="line-numbers language-none"><code class="language-none">（1）分析最优解的性质，并刻画其结构特征。
+
+（2）递归的定义最优解。
+
+（3）以自底向上或自顶向下的记忆化方式（备忘录法）计算出最优值
+
+（4）根据计算最优值时得到的信息，构造问题的最优解<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="实现步骤"><a href="#实现步骤" class="headerlink" title="实现步骤"></a>实现步骤</h2><p>1、创建一个一维数组或者二维数组，保存每一个子问题的结果，具体创建一维数组还是二维数组看题目而定，基本上如果题目中给出的是一个一维数组进行操作，就可以只创建一个一维数组，如果题目中给出了两个一维数组进行操作或者两种不同类型的变量值，比如背包问题中的不同物体的体积与总体积，找零钱问题中的不同面值零钱与总钱数，这样就需要创建一个二维数组。</p>
+<p>2、设置数组边界值，一维数组就是设置第一个数字，二维数组就是设置第一行跟第一列的值，特别的滚动一维数组是要设置整个数组的值，然后根据后面不同的数据加进来变幻成不同的值。</p>
+<p>3、找出状态转换方程，也就是说找到每个状态跟他上一个状态的关系，根据状态转化方程写出代码。</p>
+<p>4、返回需要的值，一般是数组的最后一个或者二维数组的最右下角。</p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -536,7 +539,7 @@
         repo: 'HumbleBone.github.io',
         owner: 'HumbleBone',
         admin: "HumbleBone",
-        id: '2019/10/14/shi-yong-pycharm-yuan-cheng-lian-jie-fu-wu-qi/',
+        id: '2019/11/03/dong-tai-gui-hua/',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -557,29 +560,31 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2019/10/17/mei-tian-yi-dao-leetcode-ti-sheng-ni-de-bian-cheng-neng-li/">
+                <a href="/2019/11/03/dong-tai-gui-hua/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/32.png" class="responsive-img" alt="每天一道leetcode提升你的编程能力">
+                        <img src="/medias/featureimages/11.png" class="responsive-img" alt="动态规划">
                         
-                        <span class="card-title">每天一道leetcode提升你的编程能力</span>
+                        <span class="card-title">动态规划</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            本篇文章主要介绍如何高效使用 LeetCode 编程，每天坚持刷一道题目，提升自己的代码水平。
+                            
+动态方法与分治算法很相似，都是通过递归求解子问题，最后将子问题的解重新组合来求解原问题。不同的是，分治算法将问题分解为互不相交的子问题，而动态规划应用与子问题重叠的情况，即不同的子问题具有公共的子问题。在这种情况下，分治算法会做许多不必要
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-10-17
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-11-03
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
@@ -592,11 +597,12 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/leetcode/" target="_blank">
-                        <span class="chip bg-color">leetcode</span>
+                    <a href="/tags/算法/" target="_blank">
+                        <span class="chip bg-color">算法</span>
                     </a>
                     
                 </div>
@@ -610,24 +616,24 @@
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/10/05/shi-yong-shadowsocksr-shi-xian-ke-xue-shang-wang/">
+                <a href="/2019/10/27/python-pa-qu-google-baidu-tu-pian/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/21.png" class="responsive-img" alt="使用ShadowsocksR实现科学上网">
+                        <img src="/medias/featureimages/1.png" class="responsive-img" alt="python爬取Google、Baidu图片">
                         
-                        <span class="card-title">使用ShadowsocksR实现科学上网</span>
+                        <span class="card-title">python爬取Google、Baidu图片</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            在Windows客户端使用ShadowsocksR的小白搭建教程，翻越这堵高墙，让你我都能共享自由的互联网。
+                            最近训练模型需要用到一些图片集，因此在网上搜索了相关的爬虫代码，最后总结了如何使用python爬取google和baidu的图片。
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-10-05
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-10-27
                             </span>
                         <span class="publish-author">
                             
@@ -644,8 +650,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/shadowsocksR/" target="_blank">
-                        <span class="chip bg-color">shadowsocksR</span>
+                    <a href="/tags/爬虫/" target="_blank">
+                        <span class="chip bg-color">爬虫</span>
                     </a>
                     
                 </div>
